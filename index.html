@@ -76,6 +76,103 @@
     .modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text-muted); }
     .modal-content { font-size: 13.5px; line-height: 1.55; color: var(--text); background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid var(--border); max-height: 60vh; overflow-y: auto; }
     #loading { text-align: center; padding: 40px; font-size: 15px; color: var(--text-muted); }
+
+    /* --- STILI MOBILE RESPONSIVE --- */
+
+/* 1. Barra dei giorni a scorrimento touch */
+.tabs-nav {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x mandatory;
+  padding: 8px 4px 14px 4px;
+  scrollbar-width: none; /* Nasconde scrollbar su Firefox */
+}
+
+.tabs-nav::-webkit-scrollbar {
+  display: none; /* Nasconde scrollbar su Safari / Chrome */
+}
+
+.tab-btn {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  padding: 10px 16px;
+  font-size: 14px;
+  white-space: nowrap;
+  border-radius: 9999px; /* Stile pillola moderno */
+}
+
+/* 2. Ottimizzazioni per schermi piccoli (smartphone) */
+@media (max-width: 640px) {
+  body {
+    padding: 12px 8px;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .day-card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  .day-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .day-title {
+    font-size: 18px;
+  }
+
+  .day-sport {
+    font-size: 12px;
+  }
+
+  /* Tabelle scorrevoli con indicatore visivo */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
+    margin: 10px 0;
+  }
+
+  table {
+    min-width: 480px; /* Evita che le colonne si schiaccino troppo */
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  /* Macro Bar compatta */
+  .macro-bar {
+    font-size: 11.5px;
+    padding: 6px 10px;
+  }
+
+  /* Chip di riepilogo giornaliero a colonna */
+  .summary-bar {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .summary-chip {
+    padding: 10px;
+  }
+
+  /* Modal Ricetta a tutto schermo su telefono */
+  .modal-content {
+    width: 95%;
+    max-height: 85vh;
+    padding: 16px;
+  }
+}
   </style>
 </head>
 <body>
@@ -141,7 +238,30 @@
     nav.innerHTML = '';
     content.innerHTML = '';
 
-    // Aggiorna la mappa con le ricette disponibili generate nel piano
+    // Mappatura giorni della settimana (0 = Domenica, 1 = Lunedì, ecc.)
+    const mappaGiorni = {
+      0: "domenica",
+      1: "lunedì",
+      2: "martedì",
+      3: "mercoledì",
+      4: "giovedì",
+      5: "venerdì",
+      6: "sabato"
+    };
+
+    const oggiNome = mappaGiorni[new Date().getDay()];
+
+    // Cerca l'indice del giorno odierno all'interno di data.giorni
+    let activeDayIndex = data.giorni.findIndex(d => 
+      d.giorno.toLowerCase().includes(oggiNome)
+    );
+
+    // Se per qualsiasi motivo non trova il giorno (es. formattazione diversa), apre il primo (Lunedì)
+    if (activeDayIndex === -1) {
+      activeDayIndex = 0;
+    }
+
+    // Mappatura ricette per ricerca istantanea
     if (data.ricette_disponibili) {
       data.ricette_disponibili.forEach(r => {
         ricetteMappa[r.titolo] = r;
@@ -149,9 +269,12 @@
     }
 
     data.giorni.forEach((d, idx) => {
+      const isOggi = idx === activeDayIndex;
+
       const btn = document.createElement('button');
-      btn.className = `tab-btn ${idx === 0 ? 'active' : ''}`;
-      btn.textContent = d.giorno;
+      btn.className = `tab-btn ${isOggi ? 'active' : ''}`;
+      // Aggiunge un piccolo pallino o testo "Oggi" se è il giorno corrente
+      btn.textContent = isOggi ? `📍 ${d.giorno}` : d.giorno;
       btn.onclick = () => switchTab(idx);
       nav.appendChild(btn);
 
@@ -169,11 +292,11 @@
 
       const pane = document.createElement('div');
       pane.id = `pane-${idx}`;
-      pane.style.display = idx === 0 ? 'block' : 'none';
+      pane.style.display = isOggi ? 'block' : 'none';
       pane.innerHTML = `
         <div class="day-card">
           <div class="day-header">
-            <div class="day-title">${d.giorno}</div>
+            <div class="day-title">${d.giorno} ${isOggi ? '<span style="font-size:13px; font-weight:600; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:12px; margin-left:8px; vertical-align:middle;">Oggi</span>' : ''}</div>
             <div class="day-sport">${d.sport}</div>
           </div>
           
@@ -295,6 +418,14 @@
       `;
       content.appendChild(pane);
     });
+
+    // Se lo schermo è stretto su smartphone, fa scorrere la barra dei tab per mostrare subito il giorno attivo
+    setTimeout(() => {
+      const activeBtn = nav.children[activeDayIndex];
+      if (activeBtn) {
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }, 100);
 
     // Tab Ricette (Ordinate: fattibili prima)
     if (data.ricette_disponibili && data.ricette_disponibili.length > 0) {
