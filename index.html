@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Piano Nutrizionale Familiare</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --secondary: #0284c7;
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #1e293b;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --giuseppe: #1d4ed8;
+      --marinella: #b91c1c;
+      --alexandra: #047857;
+      --totale-bg: #f0f9ff;
+      --totale-color: #0369a1;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 16px; line-height: 1.5; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    header { text-align: center; margin-bottom: 20px; }
+    header h1 { font-size: 24px; color: var(--primary); font-weight: 700; margin-bottom: 4px; }
+    header p { color: var(--text-muted); font-size: 13px; }
+    .tabs-nav { display: flex; gap: 6px; overflow-x: auto; background: #e2e8f0; padding: 6px; border-radius: 12px; margin-bottom: 20px; -webkit-overflow-scrolling: touch; }
+    .tab-btn { flex: 1; min-width: 90px; padding: 10px 14px; border: none; background: transparent; border-radius: 8px; font-weight: 600; font-size: 13.5px; color: var(--text-muted); cursor: pointer; transition: 0.2s; white-space: nowrap; }
+    .tab-btn.active { background: var(--card-bg); color: var(--primary); box-shadow: 0 2px 5px rgba(0,0,0,0.06); }
+    .day-card { background: var(--card-bg); border-radius: 16px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); border: 1px solid var(--border); padding: 20px; margin-bottom: 20px; }
+    .day-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #f1f5f9; padding-bottom: 12px; margin-bottom: 18px; flex-wrap: wrap; gap: 8px; }
+    .day-title { font-size: 20px; font-weight: 700; color: var(--primary); }
+    .day-sport { font-size: 12.5px; font-weight: 600; background: #e0f2fe; color: #0369a1; padding: 4px 12px; border-radius: 20px; }
+    .meal-section { margin-bottom: 20px; }
+    .meal-title-wrap { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .meal-title { font-size: 14.5px; font-weight: 700; color: var(--text); display: flex; align-items: center; gap: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    .meal-title::before { content: ""; width: 4px; height: 15px; background: var(--secondary); border-radius: 2px; display: inline-block; }
+    .btn-recipe-modal { background: #f0fdf4; border: 1px solid #bbf7d0; color: #15803d; font-size: 11.5px; font-weight: 700; padding: 3px 9px; border-radius: 6px; cursor: pointer; }
+    .meal-list { list-style: none; background: #f8fafc; border-radius: 10px; padding: 10px 14px; border: 1px solid #f1f5f9; display: flex; flex-direction: column; gap: 5px; font-size: 13.5px; }
+    .meal-list li b.g { color: var(--giuseppe); }
+    .meal-list li b.m { color: var(--marinella); }
+    .meal-list li b.a { color: var(--alexandra); }
+    .table-responsive { overflow-x: auto; border-radius: 10px; border: 1px solid var(--border); margin-bottom: 8px; -webkit-overflow-scrolling: touch; }
+    table { width: 100%; border-collapse: collapse; text-align: left; font-size: 13.5px; background: #fff; min-width: 480px; }
+    th { background: #f1f5f9; color: var(--text-muted); font-weight: 600; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+    td { padding: 8px 12px; border-bottom: 1px solid #f1f5f9; }
+    td:not(:first-child), th:not(:first-child) { text-align: center; }
+    th.col-totale { color: var(--totale-color); background: #e0f2fe; font-weight: 700; }
+    td.col-totale { background: var(--totale-bg); color: var(--totale-color); font-weight: 700; }
+    .meal-macro-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 6px; margin-top: 6px; margin-bottom: 6px; }
+    .meal-macro-chip { background: #f8fafc; border: 1px dashed #cbd5e1; border-radius: 8px; padding: 6px 10px; font-size: 11.5px; line-height: 1.35; }
+    .meal-macro-chip b.g { color: var(--giuseppe); }
+    .meal-macro-chip b.m { color: var(--marinella); }
+    .meal-macro-chip b.a { color: var(--alexandra); }
+    .summary-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .summary-chip { padding: 10px 12px; border-radius: 10px; background: #f8fafc; border: 1px solid var(--border); font-size: 12.5px; }
+    .summary-chip.giuseppe { border-left: 4px solid var(--giuseppe); }
+    .summary-chip.marinella { border-left: 4px solid var(--marinella); }
+    .summary-chip.alexandra { border-left: 4px solid var(--alexandra); }
+    .summary-name { font-weight: 700; margin-bottom: 2px; }
+    
+    /* Stili Tab Ricette */
+    .recipe-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+    .recipe-card { background: #ffffff; border: 1px solid var(--border); border-radius: 12px; padding: 14px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); }
+    .recipe-badge { display: inline-block; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; margin-bottom: 8px; }
+    .badge-ok { background: #dcfce7; color: #15803d; }
+    .badge-no { background: #fee2e2; color: #b91c1c; }
+    .recipe-proc { font-size: 12.5px; color: #334155; line-height: 1.45; background: #f8fafc; padding: 10px; border-radius: 8px; margin-top: 8px; border: 1px solid #f1f5f9; }
+
+    /* Modale Popup Procedimento */
+    .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(15, 23, 42, 0.55); backdrop-filter: blur(2px); z-index: 1000; justify-content: center; align-items: center; padding: 16px; }
+    .modal-box { background: #fff; width: 100%; max-width: 520px; border-radius: 16px; padding: 22px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 12px; }
+    .modal-header h3 { font-size: 17px; color: var(--primary); }
+    .modal-close { background: none; border: none; font-size: 22px; cursor: pointer; color: var(--text-muted); }
+    .modal-content { font-size: 13.5px; line-height: 1.55; color: var(--text); background: #f8fafc; padding: 12px; border-radius: 10px; border: 1px solid var(--border); max-height: 60vh; overflow-y: auto; }
+    #loading { text-align: center; padding: 40px; font-size: 15px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Piano Nutrizionale Familiare</h1>
+    <p>Giuseppe • Marinella • Alexandra | Consultazione rapida settimanale</p>
+  </header>
+  <nav class="tabs-nav" id="tabsNav"></nav>
+  <div id="tabContent"><div id="loading">Caricamento del piano alimentare...</div></div>
+</div>
+
+<!-- Struttura Modale -->
+<div class="modal-overlay" id="recipeModal" onclick="closeModal(event)">
+  <div class="modal-box" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <h3 id="modalTitle">Titolo Ricetta</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-content" id="modalProc"></div>
+  </div>
+</div>
+
+<script>
+  let ricetteMappa = {};
+
+  // Carica prima il ricettario statico (se presente) e poi renderizza il piano
+  fetch('dispensa/ricettario.json')
+    .then(r => r.ok ? r.json() : [])
+    .then(ricette => {
+      ricette.forEach(r => { ricetteMappa[r.titolo] = r; });
+      return fetch('piano_settimanale.json');
+    })
+    .catch(() => fetch('piano_settimanale.json'))
+    .then(r => {
+      if (!r.ok) throw new Error("File piano_settimanale.json non trovato");
+      return r.json();
+    })
+    .then(data => renderDiet(data))
+    .catch(err => {
+      document.getElementById('loading').innerHTML = `<b>Attenzione:</b> ${err.message}. Esegui <code>python genera_piano.py</code> per crearlo.`;
+    });
+
+  function renderMacroBar(macroObj) {
+    if (!macroObj) return '';
+    return `
+      <div class="meal-macro-bar">
+        <div class="meal-macro-chip"><b class="g">Gius:</b> ${macroObj.giuseppe || '-'}</div>
+        <div class="meal-macro-chip"><b class="m">Mari:</b> ${macroObj.marinella || '-'}</div>
+        <div class="meal-macro-chip"><b class="a">Alex:</b> ${macroObj.alexandra || '-'}</div>
+      </div>
+    `;
+  }
+
+  function getRecipeBtn(ricettaId) {
+    if (!ricettaId) return '';
+    return `<button class="btn-recipe-modal" onclick="openModal('${encodeURIComponent(ricettaId)}')">📖 Procedimento</button>`;
+  }
+
+  function renderDiet(data) {
+    const nav = document.getElementById('tabsNav');
+    const content = document.getElementById('tabContent');
+    nav.innerHTML = '';
+    content.innerHTML = '';
+
+    // Aggiorna la mappa con le ricette disponibili generate nel piano
+    if (data.ricette_disponibili) {
+      data.ricette_disponibili.forEach(r => {
+        ricetteMappa[r.titolo] = r;
+      });
+    }
+
+    data.giorni.forEach((d, idx) => {
+      const btn = document.createElement('button');
+      btn.className = `tab-btn ${idx === 0 ? 'active' : ''}`;
+      btn.textContent = d.giorno;
+      btn.onclick = () => switchTab(idx);
+      nav.appendChild(btn);
+
+      const colGius = typeof d.colazione.giuseppe === 'object' && d.colazione.giuseppe !== null ? (d.colazione.giuseppe.alimenti || d.colazione.giuseppe) : d.colazione.giuseppe;
+      const colMari = typeof d.colazione.marinella === 'object' && d.colazione.marinella !== null ? (d.colazione.marinella.alimenti || d.colazione.marinella) : d.colazione.marinella;
+      const colAlex = typeof d.colazione.alexandra === 'object' && d.colazione.alexandra !== null ? (d.colazione.alexandra.alimenti || d.colazione.alexandra) : d.colazione.alexandra;
+
+      const colMacro = d.colazione.macro || null;
+      const colRicetta = d.colazione.ricetta_id || null;
+
+      const spMMacro = d.spuntino_mattina.macro || null;
+      const spMRicetta = d.spuntino_mattina.ricetta_id || null;
+      const spPMacro = d.spuntino_pomeriggio.macro || null;
+      const spPRicetta = d.spuntino_pomeriggio.ricetta_id || null;
+
+      const pane = document.createElement('div');
+      pane.id = `pane-${idx}`;
+      pane.style.display = idx === 0 ? 'block' : 'none';
+      pane.innerHTML = `
+        <div class="day-card">
+          <div class="day-header">
+            <div class="day-title">${d.giorno}</div>
+            <div class="day-sport">${d.sport}</div>
+          </div>
+          
+          <!-- Colazione -->
+          <div class="meal-section">
+            <div class="meal-title-wrap">
+              <div class="meal-title">Colazione</div>
+              ${getRecipeBtn(colRicetta)}
+            </div>
+            <ul class="meal-list">
+              <li><b class="g">Giuseppe:</b> ${colGius}</li>
+              <li><b class="m">Marinella:</b> ${colMari}</li>
+              <li><b class="a">Alexandra:</b> ${colAlex}</li>
+            </ul>
+            ${renderMacroBar(colMacro)}
+          </div>
+
+          <!-- Spuntino Metà Mattina -->
+          <div class="meal-section">
+            <div class="meal-title-wrap">
+              <div class="meal-title">Spuntino Metà Mattina</div>
+              ${getRecipeBtn(spMRicetta)}
+            </div>
+            <ul class="meal-list">
+              <li><b class="g">Giuseppe:</b> ${d.spuntino_mattina.giuseppe}</li>
+              <li><b class="m">Marinella:</b> ${d.spuntino_mattina.marinella}</li>
+              <li><b class="a">Alexandra:</b> ${d.spuntino_mattina.alexandra}</li>
+            </ul>
+            ${renderMacroBar(spMMacro)}
+          </div>
+
+          <!-- Pranzo -->
+          <div class="meal-section">
+            <div class="meal-title-wrap">
+              <div class="meal-title">Pranzo: ${d.pranzo.titolo}</div>
+              ${getRecipeBtn(d.pranzo.ricetta_id)}
+            </div>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ingrediente</th>
+                    <th>Giuseppe</th>
+                    <th>Marinella</th>
+                    <th>Alexandra</th>
+                    <th class="col-totale">Totale Pentola</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${d.pranzo.ingredienti.map(i => `
+                    <tr>
+                      <td><b>${i.nome}</b></td>
+                      <td>${i.giuseppe}</td>
+                      <td>${i.marinella}</td>
+                      <td>${i.alexandra}</td>
+                      <td class="col-totale">${i.totale || '-'}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+            ${renderMacroBar(d.pranzo.macro)}
+          </div>
+
+          <!-- Spuntino Pomeriggio -->
+          <div class="meal-section">
+            <div class="meal-title-wrap">
+              <div class="meal-title">Spuntino Pomeriggio</div>
+              ${getRecipeBtn(spPRicetta)}
+            </div>
+            <ul class="meal-list">
+              <li><b class="g">Giuseppe:</b> ${d.spuntino_pomeriggio.giuseppe}</li>
+              <li><b class="m">Marinella:</b> ${d.spuntino_pomeriggio.marinella}</li>
+              <li><b class="a">Alexandra:</b> ${d.spuntino_pomeriggio.alexandra}</li>
+            </ul>
+            ${renderMacroBar(spPMacro)}
+          </div>
+
+          <!-- Cena -->
+          <div class="meal-section">
+            <div class="meal-title-wrap">
+              <div class="meal-title">Cena: ${d.cena.titolo}</div>
+              ${getRecipeBtn(d.cena.ricetta_id)}
+            </div>
+            <div class="table-responsive">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Ingrediente</th>
+                    <th>Giuseppe</th>
+                    <th>Marinella</th>
+                    <th>Alexandra</th>
+                    <th class="col-totale">Totale Pentola</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  ${d.cena.ingredienti.map(i => `
+                    <tr>
+                      <td><b>${i.nome}</b></td>
+                      <td>${i.giuseppe}</td>
+                      <td>${i.marinella}</td>
+                      <td>${i.alexandra}</td>
+                      <td class="col-totale">${i.totale || '-'}</td>
+                    </tr>
+                  `).join('')}
+                </tbody>
+              </table>
+            </div>
+            ${renderMacroBar(d.cena.macro)}
+          </div>
+
+          <!-- Riepilogo Giorno -->
+          <div class="summary-bar">
+            <div class="summary-chip giuseppe"><div class="summary-name" style="color:var(--giuseppe)">Giuseppe (Giorno)</div><div>${d.riepilogo.giuseppe}</div></div>
+            <div class="summary-chip marinella"><div class="summary-name" style="color:var(--marinella)">Marinella (Giorno)</div><div>${d.riepilogo.marinella}</div></div>
+            <div class="summary-chip alexandra"><div class="summary-name" style="color:var(--alexandra)">Alexandra (Giorno)</div><div>${d.riepilogo.alexandra}</div></div>
+          </div>
+        </div>
+      `;
+      content.appendChild(pane);
+    });
+
+    // Tab Ricette (Ordinate: fattibili prima)
+    if (data.ricette_disponibili && data.ricette_disponibili.length > 0) {
+      const btnRicette = document.createElement('button');
+      btnRicette.className = 'tab-btn';
+      btnRicette.textContent = '🍳 Ricette';
+      const idxRicette = nav.children.length;
+      btnRicette.onclick = () => switchTab(idxRicette);
+      nav.appendChild(btnRicette);
+
+      // Ordinamento booleano: true prima di false
+      const ricetteOrdinate = [...data.ricette_disponibili].sort((a, b) => {
+        return (b.fattibile === true ? 1 : 0) - (a.fattibile === true ? 1 : 0);
+      });
+
+      const paneRicette = document.createElement('div');
+      paneRicette.id = `pane-${idxRicette}`;
+      paneRicette.style.display = 'none';
+      paneRicette.innerHTML = `
+        <div class="day-card">
+          <div class="day-title" style="margin-bottom:6px;">Ricettario</div>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:15px;">Ricette del piano: in evidenza quelle fattibili subito con la spesa attuale.</p>
+          <div class="recipe-grid">
+            ${ricetteOrdinate.map(r => `
+              <div class="recipe-card">
+                <span class="recipe-badge ${r.fattibile ? 'badge-ok' : 'badge-no'}">
+                  ${r.fattibile ? '✅ Fattibile subito' : '❌ Ingredienti mancanti'}
+                </span>
+                <h3 style="font-size:15.5px; color:var(--primary); margin-bottom:2px;">${r.titolo}</h3>
+                <p style="font-size:11.5px; color:var(--secondary); font-weight:700; text-transform:uppercase; margin-bottom:8px;">${r.categoria}</p>${!r.fattibile && r.ingredienti_mancanti ? `<p style="font-size:12px; color:#b91c1c; margin-bottom:6px; background:#fef2f2; padding:6px 8px; border-radius:6px;"><b>Manca:</b> ${r.ingredienti_mancanti}</p>` : ''}
+                <div class="recipe-proc"><b>Preparazione:</b><br>${r.procedimento}</div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+      `;
+      content.appendChild(paneRicette);
+    }
+
+    // Tab Dispensa
+    if (data.stato_dispensa) {
+      const btnScorte = document.createElement('button');
+      btnScorte.className = 'tab-btn';
+      btnScorte.textContent = '📦 Dispensa';
+      const idxScorte = nav.children.length;
+      btnScorte.onclick = () => switchTab(idxScorte);
+      nav.appendChild(btnScorte);
+
+      const paneScorte = document.createElement('div');
+      paneScorte.id = `pane-${idxScorte}`;
+      paneScorte.style.display = 'none';
+      paneScorte.innerHTML = `
+        <div class="day-card">
+          <div class="day-title" style="margin-bottom:15px;">Monitoraggio Dispensa e Scorte</div>
+          <p style="font-size:13.5px; margin-bottom:12px;"><b>Ingredienti consumati nel piano:</b><br><span style="color:#475569;">${data.stato_dispensa.utilizzate.join(', ')}</span></p>
+          <p style="font-size:13.5px; color:var(--alexandra);"><b>Ingredienti ancora disponibili:</b><br>${data.stato_dispensa.rimanenti.join(', ')}</p>
+        </div>
+      `;
+      content.appendChild(paneScorte);
+    }
+  }
+
+  function switchTab(index) {
+    document.querySelectorAll('.tab-btn').forEach((b, i) => b.classList.toggle('active', i === index));
+    document.querySelectorAll('#tabContent > div').forEach((p, i) => p.style.display = i === index ? 'block' : 'none');
+  }
+
+  function openModal(ricettaIdRaw) {
+    const ricettaId = decodeURIComponent(ricettaIdRaw);
+    const ricetta = ricetteMappa[ricettaId];
+    if (ricetta) {
+      document.getElementById('modalTitle').textContent = ricetta.titolo;
+      document.getElementById('modalProc').innerHTML = `
+        <p style="margin-bottom:10px;"><b>Categoria:</b> ${ricetta.categoria}</p>
+        <p style="margin-bottom:10px;"><b>Procedimento:</b><br>${ricetta.procedimento}</p>
+      `;
+      document.getElementById('recipeModal').style.display = 'flex';
+    } else {
+      alert("Procedimento non trovato per questa ricetta.");
+    }
+  }
+
+  function closeModal(e) {
+    document.getElementById('recipeModal').style.display = 'none';
+  }
+</script>
+</body>
+</html>

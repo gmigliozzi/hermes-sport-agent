@@ -1,0 +1,17 @@
+cat << 'EOF' > .gitignore
+.env
+venv/
+.DS_Store
+*/.DS_Store
+__pycache__/
+*.pyc
+
+*.py
+skills/
+profiles/
+preferenze/
+dispensa/spesa_settimana.md
+ricette/
+mome/
+debug_output*.txt
+EOF

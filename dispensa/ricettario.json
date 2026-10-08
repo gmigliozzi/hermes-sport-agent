@@ -1,0 +1,336 @@
+[
+  {
+    "titolo": "Porridge proteico al pistacchio",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Fiocchi d'avena",
+      "Latte",
+      "Crema 100% pistacchio",
+      "Pistacchi tritati",
+      "Proteine in polvere alla vaniglia",
+      "Miele"
+    ],
+    "procedimento": "Cuocere 50g di fiocchi d'avena con 200ml di latte e 100ml di acqua. Amalgamare con crema di pistacchio, proteine e completare con granella di pistacchi e miele."
+  },
+  {
+    "titolo": "Granola croccante al burro d'arachidi e cioccolato",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Fiocchi d'avena",
+      "Burro d'arachidi 100%",
+      "Banana matura",
+      "Semi di chia",
+      "Semi di lino",
+      "Cannella",
+      "Cioccolato fondente",
+      "Frutta secca",
+      "Miele"
+    ],
+    "procedimento": "Schiacciare la banana, unire burro d'arachidi, miele, frutta secca, semi e fiocchi d'avena. Cuocere in forno a 160°C per 35-40 minuti, far raffreddare e spezzettare unendo cioccolato fondente."
+  },
+  {
+    "titolo": "Banana Biscoff Overnight Oats",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Fiocchi d'avena",
+      "Latte",
+      "Banana matura",
+      "Semi di chia",
+      "Yogurt alla vaniglia",
+      "Crema spalmabile Biscoff"
+    ],
+    "procedimento": "Schiacciare la banana in un vasetto, aggiungere fiocchi d'avena, semi di chia e latte. Mescolare bene, coprire con yogurt, crema Biscoff sciolta e fettine di banana prima di riporre in frigo."
+  },
+  {
+    "titolo": "Pancake Squeezer Fit",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Albume d'uovo pastorizzato",
+      "Yogurt greco 0%",
+      "Farina di avena aromatizzata",
+      "Farina di riso aromatizzata",
+      "Proteine in polvere",
+      "Lievito per dolci",
+      "Idrolitina"
+    ],
+    "procedimento": "Unire albume, yogurt greco, farine aromatizzate e agenti lievitanti con una frusta. Trasferire nello squeezer e cuocere su padella calda con coperchio per 3-4 minuti girando a metà cottura."
+  },
+  {
+    "titolo": "Mini porridge fondente, yogurt & cocco",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Fiocchi d'avena",
+      "Bevanda vegetale",
+      "Cioccolato fondente",
+      "Yogurt greco",
+      "Cocco rapé"
+    ],
+    "procedimento": "Cuocere l'avena con la bevanda vegetale, unire il fondente per farlo sciogliere e completare a freddo con yogurt e cocco rapé."
+  },
+  {
+    "titolo": "Dolce proteico al cucchiaio tipo tiramisù",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Gallette di riso",
+      "Caffè",
+      "Yogurt greco 0%",
+      "Dolcificante liquido",
+      "Cacao amaro magro"
+    ],
+    "procedimento": "Alternare gallette bagnate nel caffè a strati di yogurt greco dolcificato, terminando con una spolverata di cacao amaro. Lasciare rassodare in frigo."
+  },
+  {
+    "titolo": "Budino proteico senza cottura",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Yogurt greco 0%",
+      "Proteine whey hydro al cioccolato bianco",
+      "Burro d'arachidi",
+      "Dolcificante",
+      "Gocce di cioccolato fondente"
+    ],
+    "procedimento": "Mescolare yogurt greco 0%, whey, burro d'arachidi e dolcificante fino a consistenza omogenea. Completare con gocce di cioccolato e far riposare in frigo."
+  },
+  {
+    "titolo": "Pancake mela e cannella",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Uova",
+      "Farina d'avena",
+      "Yogurt greco",
+      "Cannella",
+      "Lievito per dolci",
+      "Mela",
+      "Noci"
+    ],
+    "procedimento": "Mescolare uovo, farina d'avena e yogurt greco con cannella e lievito. Cuocere i pancake in padella e guarnire con mela saltata a cubetti e gherigli di noce."
+  },
+  {
+    "titolo": "Pancake sgonfia-pancia fit",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Uova",
+      "Yogurt greco",
+      "Farina d'avena",
+      "Cannella",
+      "Lievito per dolci"
+    ],
+    "procedimento": "Mescolare un uovo con yogurt greco, farina d'avena, cannella e lievito. Cuocere in padella antiaderente due minuti per lato."
+  },
+  {
+    "titolo": "Crepes Fit Proteiche (2 ingredienti)",
+    "categoria": "Colazione",
+    "ingredienti": [
+      "Fiocchi d'avena integrale",
+      "Albume d'uovo pastorizzato",
+      "Pura pasta di nocciola tostata 100%",
+      "Miele di eucalipto"
+    ],
+    "procedimento": "Frullare finemente i fiocchi d'avena integrale per ottenere la farina, mescolare accuratamente con l'albume pastorizzato fino a formare una pastella fluida senza grumi. Cuocere su padella antiaderente ben calda 1-2 minuti per lato e farcire con pura pasta di nocciola tostata 100% e un velo di miele."
+  },
+  {
+    "titolo": "Pasta con crema di avocado, pesce spada ai ferri, zucchine e pomodorini",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Pesce spada fresco a tranci",
+      "Avocado",
+      "Zucchine",
+      "Pomodorini freschi",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere la pasta e condirla con polpa di avocado schiacciata. Servire insieme a trancio di pesce spada grigliato e contorno di zucchine e pomodorini spadellati."
+  },
+  {
+    "titolo": "Riso Basmati con Tonno e Pomodorini",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Riso Basmati",
+      "Tonno in scatola al naturale",
+      "Pomodorini freschi",
+      "Basilico fresco",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Lessare il riso basmati, lasciarlo intiepidire e condirlo a freddo con tonno sgocciolato, pomodorini tagliati a metà, olio EVO e basilico fresco."
+  },
+  {
+    "titolo": "Gnocchi alla Sorrentina Healthy",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Gnocchi di patate",
+      "Passata di pomodoro",
+      "Mozzarella light",
+      "Parmigiano",
+      "Basilico"
+    ],
+    "procedimento": "Cuocere gli gnocchi in acqua bollente, scolarli e condirli con passata di pomodoro calda, cubetti di mozzarella light e spolverata finale di parmigiano."
+  },
+  {
+    "titolo": "Pasta cremosa zucchine e gamberi",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Gamberi",
+      "Zucchine",
+      "Formaggio spalmabile light",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere le zucchine e frullarne una parte insieme al formaggio spalmabile per creare una crema. Saltare i gamberi e mantecare la pasta con la crema."
+  },
+  {
+    "titolo": "Risotto cremoso allo zafferano light",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Riso",
+      "Zafferano",
+      "Brodo vegetale pronto",
+      "Formaggio spalmabile light",
+      "Parmigiano"
+    ],
+    "procedimento": "Tostare il riso e portarlo a cottura con brodo vegetale e zafferano; mantecare a fuoco spento con formaggio spalmabile light e parmigiano."
+  },
+  {
+    "titolo": "Pasta al pesto fit di ricotta e basilico",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Ricotta light",
+      "Basilico fresco",
+      "Parmigiano",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Frullare ricotta light con basilico, parmigiano e poca acqua di cottura fino ad ottenere una crema omogenea, quindi mantecarvi la pasta scolata al dente."
+  },
+  {
+    "titolo": "Pasta tonno, pomodorini e olive",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Tonno in scatola al naturale",
+      "Pomodorini freschi",
+      "Olive nere",
+      "Capperi",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Saltare in padella tonno sgocciolato con pomodorini a spicchi, olive a rondelle e capperi. Unire la pasta scolata e mantecare con acqua di cottura."
+  },
+  {
+    "titolo": "Pasta cremosa al pomodoro e ricotta light",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta tipo rigatoni",
+      "Passata di pomodoro",
+      "Ricotta light",
+      "Basilico fresco",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere la passata di pomodoro, unire la ricotta light con poca acqua di cottura della pasta per creare un sugo cremoso, quindi mantecare i rigatoni con pepe e basilico."
+  },
+  {
+    "titolo": "Pasta cremosa zucca e pollo",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Petto di pollo",
+      "Zucca",
+      "Parmigiano",
+      "Rosmarino fresco",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere la zucca e frullarla con poca acqua di cottura fino a consistenza vellutata. Saltare i bocconcini di petto di pollo e mantecare la pasta con la crema di zucca."
+  },
+  {
+    "titolo": "Riso integrale, uova strapazzate, pomodorini e avocado",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Riso integrale",
+      "Uova fresche intere",
+      "Pomodorini freschi",
+      "Avocado",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Comporre il piatto unendo riso integrale lessato, uova strapazzate in padella e insalata fresca di pomodorini e cubetti di avocado."
+  },
+  {
+    "titolo": "Pane integrale, bocconcini di pollo, asparagi",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pane integrale",
+      "Petto di pollo",
+      "Asparagi freschi",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Grigliare gli asparagi e dorare i bocconcini di petto di pollo in padella antiaderente; servire con fette di pane integrale tostato."
+  },
+  {
+    "titolo": "Pasta con olio, pesce spada al sugo, spinaci",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pasta",
+      "Pesce spada fresco a tranci",
+      "Passata di pomodoro",
+      "Spinaci freschi",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere il trancio di pesce spada in un sugo leggero di pomodoro, lessare gli spinaci e servire insieme a pasta condita con solo olio EVO."
+  },
+  {
+    "titolo": "Cous cous con salmone affumicato, avocado e zucchine",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Cous cous",
+      "Salmone affumicato",
+      "Avocado",
+      "Zucchine",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Reidratare il cous cous e condirlo con cubetti di avocado, zucchine grattugiate saltate e straccetti di salmone affumicato."
+  },
+  {
+    "titolo": "Riso bianco, gamberi, zucchine",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Riso",
+      "Gamberi",
+      "Zucchine",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Lessare il riso bianco e servirlo con code di gamberi scottate alla piastra e zucchine tagliate a dadini dorate in padella."
+  },
+  {
+    "titolo": "Bruschette integrali con tonno, avocado, fiocchi di latte e pomodorini",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Pane integrale",
+      "Tonno in scatola al naturale",
+      "Avocado",
+      "Fiocchi di latte",
+      "Pomodorini freschi",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Tostare fette di pane integrale e condirle con una farcia di avocado schiacciato, fiocchi di latte, tonno e pomodorini confit o scottati."
+  },
+  {
+    "titolo": "Pollo al limone con zucchine",
+    "categoria": "Pranzo",
+    "ingredienti": [
+      "Petto di pollo",
+      "Zucchine",
+      "Limone",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Tagliare il petto di pollo a bocconcini e le zucchine a rondelle. Rosolare il pollo con l'olio EVO, unire le zucchine e cuocere a fiamma moderata per 10-12 minuti insaporendo con sale e pepe fino a doratura."
+  },
+  {
+    "titolo": "Merluzzo con patate e pomodorini",
+    "categoria": "Cena",
+    "ingredienti": [
+      "Filetti di merluzzo",
+      "Patate",
+      "Pomodorini freschi",
+      "Prezzemolo",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "procedimento": "Cuocere le patate a cubetti in padella con olio, unire pomodorini e filetti di merluzzo facendoli stufare con coperchio per 10 minuti."
+  }
+]
