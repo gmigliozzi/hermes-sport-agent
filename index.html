@@ -334,7 +334,7 @@
       content.appendChild(paneRicette);
     }
 
-   // Tab Dispensa (Elenco puntato diviso per categoria)
+   // Tab Dispensa (Raggruppamento e categorizzazione automatica con elenchi puntati)
     if (data.stato_dispensa) {
       const btnScorte = document.createElement('button');
       btnScorte.className = 'tab-btn';
@@ -343,32 +343,75 @@
       btnScorte.onclick = () => switchTab(idxScorte);
       nav.appendChild(btnScorte);
 
-      // Funzione helper per renderizzare categorie o liste
-      const renderGroupedList = (dataGroup) => {
-        if (!dataGroup) return '<p style="font-size:13px; color:var(--text-muted);">Nessun elemento.</p>';
-        
-        // Se è già un array piatto (retrocompatibilità)
-        if (Array.isArray(dataGroup)) {
-          return `<ul style="margin-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.6;">
-            ${dataGroup.map(item => `<li>${item}</li>`).join('')}
-          </ul>`;
+      // Funzione che categorizza qualsiasi lista di ingredienti
+      function categorizzaIngredienti(listaOgg) {
+        if (!listaOgg) return {};
+
+        // Se il modello ha già restituito un dizionario con categorie
+        if (!Array.isArray(listaOgg) && typeof listaOgg === 'object') {
+          return listaOgg;
         }
 
-        // Se è un oggetto con categorie: { "Proteine": [...], "Cereali": [...] }
-        return Object.entries(dataGroup).map(([cat, items]) => {
-          if (!items || items.length === 0) return '';
-          return `
-            <div style="margin-bottom: 12px;">
-              <h4 style="font-size: 13.5px; font-weight: 700; color: var(--secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">
-                ${cat}
-              </h4>
-              <ul style="margin-left: 22px; font-size: 13.5px; color: #334155; line-height: 1.6;">
-                ${items.map(item => `<li>${item}</li>`).join('')}
-              </ul>
-            </div>
-          `;
-        }).join('');
-      };
+        // Se è un array piatto, lo raggruppiamo noi tramite parole chiave
+        const categorie = {
+          "🥩 Proteine (Carne, Pesce, Uova, Latticini)": [],
+          "🌾 Carboidrati, Cereali e Legumi": [],
+          "🥦 Verdura e Ortaggi": [],
+          "🍎 Frutta": [],
+          "🍯 Dolci, Snack e Frutta Secca": [],
+          "🫒 Condimenti e Conserve": []
+        };
+
+        const kProteine = ["albume", "uov", "bresaola", "manzo", "bovino", "tacchino", "pollo", "spada", "tonno", "salmone", "merluzzo", "orata", "spigola", "yogurt", "prosciutto", "ricotta", "fiocchi di latte", "latte"];
+        const kCarbo = ["riso", "pasta", "spaghetti", "penne", "rigatoni", "farfalle", "avena", "fiocchi d'avena", "fette biscottate", "pane", "panfetta", "crackers", "cracker", "corn flakes", "mais", "ceci", "lenticchie", "fagioli", "farro", "orzo", "patate"];
+        const kVerdura = ["broccoli", "carote", "lattuga", "melanzane", "zucchine", "peperoni", "pomodor", "spinaci", "finocchi", "asparagi", "fagiolini", "cavol", "cetriol", "insalata"];
+        const kFrutta = ["mela", "mele", "banana", "banane", "cachi", "limon", "arance", "pera", "pere", "frutti di bosco", "kiwi", "fragol"];
+        const kDolci = ["nutella", "miele", "muesli", "pasta di nocciol", "confettura", "barrett", "cioccolato", "marmellata", "arachid", "mandorl", "noci"];
+        const kCondimenti = ["olio", "evo", "passata", "aceto", "spezie", "origano", "sale"];
+
+        listaOgg.forEach(ing => {
+          const lower = ing.toLowerCase();
+          if (kProteine.some(k => lower.includes(k))) {
+            categorie["🥩 Proteine (Carne, Pesce, Uova, Latticini)"].push(ing);
+          } else if (kCarbo.some(k => lower.includes(k))) {
+            categorie["🌾 Carboidrati, Cereali e Legumi"].push(ing);
+          } else if (kVerdura.some(k => lower.includes(k))) {
+            categorie["🥦 Verdura e Ortaggi"].push(ing);
+          } else if (kFrutta.some(k => lower.includes(k))) {
+            categorie["🍎 Frutta"].push(ing);
+          } else if (kDolci.some(k => lower.includes(k))) {
+            categorie["🍯 Dolci, Snack e Frutta Secca"].push(ing);
+          } else if (kCondimenti.some(k => lower.includes(k))) {
+            categorie["🫒 Condimenti e Conserve"].push(ing);
+          } else {
+            categorie["🫒 Condimenti e Conserve"].push(ing);
+          }
+        });
+
+        // Elimina categorie vuote
+        const risultato = {};
+        for (const [cat, items] of Object.entries(categorie)) {
+          if (items.length > 0) risultato[cat] = items;
+        }
+        return risultato;
+      }
+
+      function renderGroupedList(dati) {
+        const raggruppati = categorizzaIngredienti(dati);
+        const categorie = Object.keys(raggruppati);
+        if (categorie.length === 0) return '<p style="font-size:13px; color:var(--text-muted);">Nessun ingrediente.</p>';
+
+        return categorie.map(cat => `
+          <div style="margin-bottom: 14px;">
+            <h4 style="font-size: 13px; font-weight: 700; color: var(--primary); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
+              ${cat}
+            </h4>
+            <ul style="padding-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.55;">
+              ${raggruppati[cat].map(item => `<li style="margin-bottom: 2px;">${item}</li>`).join('')}
+            </ul>
+          </div>
+        `).join('');
+      }
 
       const paneScorte = document.createElement('div');
       paneScorte.id = `pane-${idxScorte}`;
@@ -376,21 +419,21 @@
       paneScorte.innerHTML = `
         <div class="day-card">
           <div class="day-title" style="margin-bottom:6px;">Monitoraggio Dispensa e Scorte</div>
-          <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Stato degli ingredienti acquistati: suddivisi per categoria tra consumati e rimanenze.</p>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Riepilogo scorte diviso per categoria merceologica.</p>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px;">
             <!-- Colonna Consumati -->
             <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-                <span>🥗</span> Ingredienti consumati nel piano
+              <div style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 14px;">
+                🛒 Ingredienti consumati nel piano
               </div>
               ${renderGroupedList(data.stato_dispensa.utilizzate)}
             </div>
 
             <!-- Colonna Rimanenti -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px;">
-              <div style="font-size: 15px; font-weight: 700; color: var(--alexandra); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
-                <span>✨</span> Ingredienti ancora disponibili
+              <div style="font-size: 15px; font-weight: 700; color: var(--alexandra); margin-bottom: 14px;">
+                ✨ Ingredienti ancora disponibili
               </div>
               ${renderGroupedList(data.stato_dispensa.rimanenti)}
             </div>
