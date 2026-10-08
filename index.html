@@ -334,7 +334,7 @@
       content.appendChild(paneRicette);
     }
 
-    // Tab Dispensa
+   // Tab Dispensa (Elenco puntato diviso per categoria)
     if (data.stato_dispensa) {
       const btnScorte = document.createElement('button');
       btnScorte.className = 'tab-btn';
@@ -343,14 +343,58 @@
       btnScorte.onclick = () => switchTab(idxScorte);
       nav.appendChild(btnScorte);
 
+      // Funzione helper per renderizzare categorie o liste
+      const renderGroupedList = (dataGroup) => {
+        if (!dataGroup) return '<p style="font-size:13px; color:var(--text-muted);">Nessun elemento.</p>';
+        
+        // Se è già un array piatto (retrocompatibilità)
+        if (Array.isArray(dataGroup)) {
+          return `<ul style="margin-left: 20px; font-size: 13.5px; color: #334155; line-height: 1.6;">
+            ${dataGroup.map(item => `<li>${item}</li>`).join('')}
+          </ul>`;
+        }
+
+        // Se è un oggetto con categorie: { "Proteine": [...], "Cereali": [...] }
+        return Object.entries(dataGroup).map(([cat, items]) => {
+          if (!items || items.length === 0) return '';
+          return `
+            <div style="margin-bottom: 12px;">
+              <h4 style="font-size: 13.5px; font-weight: 700; color: var(--secondary); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.3px;">
+                ${cat}
+              </h4>
+              <ul style="margin-left: 22px; font-size: 13.5px; color: #334155; line-height: 1.6;">
+                ${items.map(item => `<li>${item}</li>`).join('')}
+              </ul>
+            </div>
+          `;
+        }).join('');
+      };
+
       const paneScorte = document.createElement('div');
       paneScorte.id = `pane-${idxScorte}`;
       paneScorte.style.display = 'none';
       paneScorte.innerHTML = `
         <div class="day-card">
-          <div class="day-title" style="margin-bottom:15px;">Monitoraggio Dispensa e Scorte</div>
-          <p style="font-size:13.5px; margin-bottom:12px;"><b>Ingredienti consumati nel piano:</b><br><span style="color:#475569;">${data.stato_dispensa.utilizzate.join(', ')}</span></p>
-          <p style="font-size:13.5px; color:var(--alexandra);"><b>Ingredienti ancora disponibili:</b><br>${data.stato_dispensa.rimanenti.join(', ')}</p>
+          <div class="day-title" style="margin-bottom:6px;">Monitoraggio Dispensa e Scorte</div>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Stato degli ingredienti acquistati: suddivisi per categoria tra consumati e rimanenze.</p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+            <!-- Colonna Consumati -->
+            <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+                <span>🥗</span> Ingredienti consumati nel piano
+              </div>
+              ${renderGroupedList(data.stato_dispensa.utilizzate)}
+            </div>
+
+            <!-- Colonna Rimanenti -->
+            <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px;">
+              <div style="font-size: 15px; font-weight: 700; color: var(--alexandra); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;">
+                <span>✨</span> Ingredienti ancora disponibili
+              </div>
+              ${renderGroupedList(data.stato_dispensa.rimanenti)}
+            </div>
+          </div>
         </div>
       `;
       content.appendChild(paneScorte);
