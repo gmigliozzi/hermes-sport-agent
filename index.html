@@ -30,7 +30,7 @@
     header h1 { font-size: 24px; color: var(--primary); font-weight: 700; margin-bottom: 4px; }
     header p { color: var(--text-muted); font-size: 13px; }
 
-   /* Barra navigazione Desktop: riga unica, compatta ed elegante */
+    /* Barra navigazione Desktop: riga unica, compatta ed elegante */
     .tabs-nav { 
       display: flex; 
       flex-wrap: nowrap; 
@@ -119,8 +119,7 @@
       body { padding: 12px 8px; }
       .container { max-width: 100%; padding: 0; }
       
-      /* Solo su smartphone diventa a scorrimento orizzontale */
-     .tabs-nav {
+      .tabs-nav {
         gap: 6px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -171,24 +170,32 @@
 <script>
   let ricetteMappa = {};
 
-  // NUOVO (Cache Busted dinamico):
-  const timestamp = Date.now();
+  async function init() {
+    const ts = Date.now();
+    try {
+      // 1. Carica ricettario se disponibile
+      try {
+        const resRicette = await fetch(`dispensa/ricettario.json?v=${ts}`, { cache: 'no-store' });
+        if (resRicette.ok) {
+          const list = await resRicette.json();
+          list.forEach(r => { ricetteMappa[r.titolo] = r; });
+        }
+      } catch (e) {
+        console.warn("Ricettario non presente o non raggiungibile:", e);
+      }
 
-  fetch(`dispensa/ricettario.json?v=${timestamp}`, { cache: 'no-store' })
-    .then(r => r.ok ? r.json() : [])
-    .then(ricette => {
-      ricette.forEach(r => { ricetteMappa[r.titolo] = r; });
-      return fetch(`piano_settimanale.json?v=${timestamp}`, { cache: 'no-store' });
-    })
-    .catch(() => fetch(`piano_settimanale.json?v=${timestamp}`, { cache: 'no-store' }))
-    .then(r => {
-      if (!r.ok) throw new Error("File piano_settimanale.json non trovato");
-      return r.json();
-    })
-    .then(data => renderDiet(data))
-    .catch(err => {
+      // 2. Carica piano settimanale principale
+      const resPiano = await fetch(`piano_settimanale.json?v=${ts}`, { cache: 'no-store' });
+      if (!resPiano.ok) {
+        throw new Error(`Impossibile recuperare piano_settimanale.json (HTTP ${resPiano.status})`);
+      }
+      const data = await resPiano.json();
+      renderDiet(data);
+    } catch (err) {
+      console.error(err);
       document.getElementById('loading').innerHTML = `<b>Attenzione:</b> ${err.message}. Esegui <code>python genera_piano.py</code> per crearlo.`;
-    });
+    }
+  }
 
   function renderMacroBar(macroObj) {
     if (!macroObj) return '';
@@ -212,7 +219,6 @@
     nav.innerHTML = '';
     content.innerHTML = '';
 
-    // Mappatura giorni della settimana (0 = Domenica, 1 = Lunedì, ecc.)
     const mappaGiorni = {
       0: "domenica",
       1: "lunedì",
@@ -224,176 +230,170 @@
     };
 
     const oggiNome = mappaGiorni[new Date().getDay()];
+    let activeDayIndex = data.giorni ? data.giorni.findIndex(d => d.giorno && d.giorno.toLowerCase().includes(oggiNome)) : 0;
+    if (activeDayIndex === -1) activeDayIndex = 0;
 
-    // Cerca l'indice del giorno odierno all'interno di data.giorni
-    let activeDayIndex = data.giorni.findIndex(d => 
-      d.giorno.toLowerCase().includes(oggiNome)
-    );
-
-    // Se per qualsiasi motivo non trova il giorno (es. formattazione diversa), apre il primo (Lunedì)
-    if (activeDayIndex === -1) {
-      activeDayIndex = 0;
+    // Indicizzazione ricette contenute nel piano
+    if (data.ricette_disponibili) {
+      data.ricette_disponibili.forEach(r => { ricetteMappa[r.titolo] = r; });
     }
 
-    // Mappatura ricette per ricerca istantanea
-    if (data.ricette_disponibili) {
-      data.ricette_disponibili.forEach(r => {
-        ricetteMappa[r.titolo] = r;
+    // Render Giorni
+    if (data.giorni && Array.isArray(data.giorni)) {
+      data.giorni.forEach((d, idx) => {
+        const isOggi = idx === activeDayIndex;
+
+        const btn = document.createElement('button');
+        btn.className = `tab-btn ${isOggi ? 'active' : ''}`;
+        btn.textContent = isOggi ? `📍 ${d.giorno}` : d.giorno;
+        btn.onclick = () => switchTab(idx);
+        nav.appendChild(btn);
+
+        const colGius = typeof d.colazione.giuseppe === 'object' && d.colazione.giuseppe !== null ? (d.colazione.giuseppe.alimenti || d.colazione.giuseppe) : d.colazione.giuseppe;
+        const colMari = typeof d.colazione.marinella === 'object' && d.colazione.marinella !== null ? (d.colazione.marinella.alimenti || d.colazione.marinella) : d.colazione.marinella;
+        const colAlex = typeof d.colazione.alexandra === 'object' && d.colazione.alexandra !== null ? (d.colazione.alexandra.alimenti || d.colazione.alexandra) : d.colazione.alexandra;
+
+        const colMacro = d.colazione.macro || null;
+        const colRicetta = d.colazione.ricetta_id || null;
+
+        const spMMacro = d.spuntino_mattina.macro || null;
+        const spMRicetta = d.spuntino_mattina.ricetta_id || null;
+        const spPMacro = d.spuntino_pomeriggio.macro || null;
+        const spPRicetta = d.spuntino_pomeriggio.ricetta_id || null;
+
+        const riepilogoGiorno = d.riepilogo || d.riepiligo || {};
+
+        const pane = document.createElement('div');
+        pane.id = `pane-${idx}`;
+        pane.style.display = isOggi ? 'block' : 'none';
+        pane.innerHTML = `
+          <div class="day-card">
+            <div class="day-header">
+              <div class="day-title">${d.giorno} ${isOggi ? '<span style="font-size:13px; font-weight:600; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:12px; margin-left:8px; vertical-align:middle;">Oggi</span>' : ''}</div>
+              <div class="day-sport">${d.sport || ''}</div>
+            </div>
+            
+            <!-- Colazione -->
+            <div class="meal-section">
+              <div class="meal-title-wrap">
+                <div class="meal-title">Colazione</div>
+                ${getRecipeBtn(colRicetta)}
+              </div>
+              <ul class="meal-list">
+                <li><b class="g">Giuseppe:</b> ${colGius}</li>
+                <li><b class="m">Marinella:</b> ${colMari}</li>
+                <li><b class="a">Alexandra:</b> ${colAlex}</li>
+              </ul>
+              ${renderMacroBar(colMacro)}
+            </div>
+
+            <!-- Spuntino Metà Mattina -->
+            <div class="meal-section">
+              <div class="meal-title-wrap">
+                <div class="meal-title">Spuntino Metà Mattina</div>
+                ${getRecipeBtn(spMRicetta)}
+              </div>
+              <ul class="meal-list">
+                <li><b class="g">Giuseppe:</b> ${d.spuntino_mattina.giuseppe}</li>
+                <li><b class="m">Marinella:</b> ${d.spuntino_mattina.marinella}</li>
+                <li><b class="a">Alexandra:</b> ${d.spuntino_mattina.alexandra}</li>
+              </ul>
+              ${renderMacroBar(spMMacro)}
+            </div>
+
+            <!-- Pranzo -->
+            <div class="meal-section">
+              <div class="meal-title-wrap">
+                <div class="meal-title">Pranzo: ${d.pranzo.titolo}</div>
+                ${getRecipeBtn(d.pranzo.ricetta_id)}
+              </div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Ingrediente</th>
+                      <th>Giuseppe</th>
+                      <th>Marinella</th>
+                      <th>Alexandra</th>
+                      <th class="col-totale">Totale Pentola</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${(d.pranzo.ingredienti || []).map(i => `
+                      <tr>
+                        <td><b>${i.nome}</b></td>
+                        <td>${i.giuseppe}</td>
+                        <td>${i.marinella}</td>
+                        <td>${i.alexandra}</td>
+                        <td class="col-totale">${i.totale || '-'}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+              ${renderMacroBar(d.pranzo.macro)}
+            </div>
+
+            <!-- Spuntino Pomeriggio -->
+            <div class="meal-section">
+              <div class="meal-title-wrap">
+                <div class="meal-title">Spuntino Pomeriggio</div>
+                ${getRecipeBtn(spPRicetta)}
+              </div>
+              <ul class="meal-list">
+                <li><b class="g">Giuseppe:</b> ${d.spuntino_pomeriggio.giuseppe}</li>
+                <li><b class="m">Marinella:</b> ${d.spuntino_pomeriggio.marinella}</li>
+                <li><b class="a">Alexandra:</b> ${d.spuntino_pomeriggio.alexandra}</li>
+              </ul>
+              ${renderMacroBar(spPMacro)}
+            </div>
+
+            <!-- Cena -->
+            <div class="meal-section">
+              <div class="meal-title-wrap">
+                <div class="meal-title">Cena: ${d.cena.titolo}</div>
+                ${getRecipeBtn(d.cena.ricetta_id)}
+              </div>
+              <div class="table-responsive">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Ingrediente</th>
+                      <th>Giuseppe</th>
+                      <th>Marinella</th>
+                      <th>Alexandra</th>
+                      <th class="col-totale">Totale Pentola</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${(d.cena.ingredienti || []).map(i => `
+                      <tr>
+                        <td><b>${i.nome}</b></td>
+                        <td>${i.giuseppe}</td>
+                        <td>${i.marinella}</td>
+                        <td>${i.alexandra}</td>
+                        <td class="col-totale">${i.totale || '-'}</td>
+                      </tr>
+                    `).join('')}
+                  </tbody>
+                </table>
+              </div>
+              ${renderMacroBar(d.cena.macro)}
+            </div>
+
+            <!-- Riepilogo Giorno -->
+            <div class="summary-bar">
+              <div class="summary-chip giuseppe"><div class="summary-name" style="color:var(--giuseppe)">Giuseppe (Giorno)</div><div>${riepilogoGiorno.giuseppe || '-'}</div></div>
+              <div class="summary-chip marinella"><div class="summary-name" style="color:var(--marinella)">Marinella (Giorno)</div><div>${riepilogoGiorno.marinella || '-'}</div></div>
+              <div class="summary-chip alexandra"><div class="summary-name" style="color:var(--alexandra)">Alexandra (Giorno)</div><div>${riepilogoGiorno.alexandra || '-'}</div></div>
+            </div>
+          </div>
+        `;
+        content.appendChild(pane);
       });
     }
 
-    data.giorni.forEach((d, idx) => {
-      const isOggi = idx === activeDayIndex;
-
-      const btn = document.createElement('button');
-      btn.className = `tab-btn ${isOggi ? 'active' : ''}`;
-      // Aggiunge un piccolo pallino o testo "Oggi" se è il giorno corrente
-      btn.textContent = isOggi ? `📍 ${d.giorno}` : d.giorno;
-      btn.onclick = () => switchTab(idx);
-      nav.appendChild(btn);
-
-      const colGius = typeof d.colazione.giuseppe === 'object' && d.colazione.giuseppe !== null ? (d.colazione.giuseppe.alimenti || d.colazione.giuseppe) : d.colazione.giuseppe;
-      const colMari = typeof d.colazione.marinella === 'object' && d.colazione.marinella !== null ? (d.colazione.marinella.alimenti || d.colazione.marinella) : d.colazione.marinella;
-      const colAlex = typeof d.colazione.alexandra === 'object' && d.colazione.alexandra !== null ? (d.colazione.alexandra.alimenti || d.colazione.alexandra) : d.colazione.alexandra;
-
-      const colMacro = d.colazione.macro || null;
-      const colRicetta = d.colazione.ricetta_id || null;
-
-      const spMMacro = d.spuntino_mattina.macro || null;
-      const spMRicetta = d.spuntino_mattina.ricetta_id || null;
-      const spPMacro = d.spuntino_pomeriggio.macro || null;
-      const spPRicetta = d.spuntino_pomeriggio.ricetta_id || null;
-
-      const pane = document.createElement('div');
-      pane.id = `pane-${idx}`;
-      pane.style.display = isOggi ? 'block' : 'none';
-      pane.innerHTML = `
-        <div class="day-card">
-          <div class="day-header">
-            <div class="day-title">${d.giorno} ${isOggi ? '<span style="font-size:13px; font-weight:600; color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:12px; margin-left:8px; vertical-align:middle;">Oggi</span>' : ''}</div>
-            <div class="day-sport">${d.sport}</div>
-          </div>
-          
-          <!-- Colazione -->
-          <div class="meal-section">
-            <div class="meal-title-wrap">
-              <div class="meal-title">Colazione</div>
-              ${getRecipeBtn(colRicetta)}
-            </div>
-            <ul class="meal-list">
-              <li><b class="g">Giuseppe:</b> ${colGius}</li>
-              <li><b class="m">Marinella:</b> ${colMari}</li>
-              <li><b class="a">Alexandra:</b> ${colAlex}</li>
-            </ul>
-            ${renderMacroBar(colMacro)}
-          </div>
-
-          <!-- Spuntino Metà Mattina -->
-          <div class="meal-section">
-            <div class="meal-title-wrap">
-              <div class="meal-title">Spuntino Metà Mattina</div>
-              ${getRecipeBtn(spMRicetta)}
-            </div>
-            <ul class="meal-list">
-              <li><b class="g">Giuseppe:</b> ${d.spuntino_mattina.giuseppe}</li>
-              <li><b class="m">Marinella:</b> ${d.spuntino_mattina.marinella}</li>
-              <li><b class="a">Alexandra:</b> ${d.spuntino_mattina.alexandra}</li>
-            </ul>
-            ${renderMacroBar(spMMacro)}
-          </div>
-
-          <!-- Pranzo -->
-          <div class="meal-section">
-            <div class="meal-title-wrap">
-              <div class="meal-title">Pranzo: ${d.pranzo.titolo}</div>
-              ${getRecipeBtn(d.pranzo.ricetta_id)}
-            </div>
-            <div class="table-responsive">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Ingrediente</th>
-                    <th>Giuseppe</th>
-                    <th>Marinella</th>
-                    <th>Alexandra</th>
-                    <th class="col-totale">Totale Pentola</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${d.pranzo.ingredienti.map(i => `
-                    <tr>
-                      <td><b>${i.nome}</b></td>
-                      <td>${i.giuseppe}</td>
-                      <td>${i.marinella}</td>
-                      <td>${i.alexandra}</td>
-                      <td class="col-totale">${i.totale || '-'}</td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
-            </div>
-            ${renderMacroBar(d.pranzo.macro)}
-          </div>
-
-          <!-- Spuntino Pomeriggio -->
-          <div class="meal-section">
-            <div class="meal-title-wrap">
-              <div class="meal-title">Spuntino Pomeriggio</div>
-              ${getRecipeBtn(spPRicetta)}
-            </div>
-            <ul class="meal-list">
-              <li><b class="g">Giuseppe:</b> ${d.spuntino_pomeriggio.giuseppe}</li>
-              <li><b class="m">Marinella:</b> ${d.spuntino_pomeriggio.marinella}</li>
-              <li><b class="a">Alexandra:</b> ${d.spuntino_pomeriggio.alexandra}</li>
-            </ul>
-            ${renderMacroBar(spPMacro)}
-          </div>
-
-          <!-- Cena -->
-          <div class="meal-section">
-            <div class="meal-title-wrap">
-              <div class="meal-title">Cena: ${d.cena.titolo}</div>
-              ${getRecipeBtn(d.cena.ricetta_id)}
-            </div>
-            <div class="table-responsive">
-              <table>
-                <thead>
-                  <tr>
-                    <th>Ingrediente</th>
-                    <th>Giuseppe</th>
-                    <th>Marinella</th>
-                    <th>Alexandra</th>
-                    <th class="col-totale">Totale Pentola</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  ${d.cena.ingredienti.map(i => `
-                    <tr>
-                      <td><b>${i.nome}</b></td>
-                      <td>${i.giuseppe}</td>
-                      <td>${i.marinella}</td>
-                      <td>${i.alexandra}</td>
-                      <td class="col-totale">${i.totale || '-'}</td>
-                    </tr>
-                  `).join('')}
-                </tbody>
-              </table>
-            </div>
-            ${renderMacroBar(d.cena.macro)}
-          </div>
-
-          <!-- Riepilogo Giorno -->
-          <div class="summary-bar">
-            <div class="summary-chip giuseppe"><div class="summary-name" style="color:var(--giuseppe)">Giuseppe (Giorno)</div><div>${d.riepilogo.giuseppe}</div></div>
-            <div class="summary-chip marinella"><div class="summary-name" style="color:var(--marinella)">Marinella (Giorno)</div><div>${d.riepilogo.marinella}</div></div>
-            <div class="summary-chip alexandra"><div class="summary-name" style="color:var(--alexandra)">Alexandra (Giorno)</div><div>${d.riepilogo.alexandra}</div></div>
-          </div>
-        </div>
-      `;
-      content.appendChild(pane);
-    });
-
-    // Se lo schermo è stretto su smartphone, fa scorrere la barra dei tab per mostrare subito il giorno attivo
+    // Scroll al giorno attivo su smartphone
     setTimeout(() => {
       const activeBtn = nav.children[activeDayIndex];
       if (activeBtn) {
@@ -401,7 +401,7 @@
       }
     }, 100);
 
-    // Tab Ricette (Ordinate: fattibili prima)
+    // Tab Ricette
     if (data.ricette_disponibili && data.ricette_disponibili.length > 0) {
       const btnRicette = document.createElement('button');
       btnRicette.className = 'tab-btn';
@@ -410,7 +410,6 @@
       btnRicette.onclick = () => switchTab(idxRicette);
       nav.appendChild(btnRicette);
 
-      // Ordinamento booleano: true prima di false
       const ricetteOrdinate = [...data.ricette_disponibili].sort((a, b) => {
         return (b.fattibile === true ? 1 : 0) - (a.fattibile === true ? 1 : 0);
       });
@@ -419,7 +418,7 @@
       paneRicette.id = `pane-${idxRicette}`;
       paneRicette.style.display = 'none';
 
-      // Sezione Spesa Consigliata per sbloccare ricette
+      // Box Lista della spesa ingredienti mancanti
       let spesaHtml = '';
       if (data.ingredienti_da_acquistare && Object.keys(data.ingredienti_da_acquistare).length > 0) {
         spesaHtml = `
@@ -443,11 +442,14 @@
           </div>
         `;
       }
-      
+
       paneRicette.innerHTML = `
         <div class="day-card">
           <div class="day-title" style="margin-bottom:6px;">Ricettario</div>
-          <p style="font-size:13px; color:var(--text-muted); margin-bottom:15px;">Ricette del piano: in evidenza quelle fattibili subito con la spesa attuale.</p>
+          <p style="font-size:13px; color:var(--text-muted); margin-bottom:15px;">In verde le ricette già fattibili con la spesa attuale, in rosso quelle con ingredienti mancanti.</p>
+          
+          ${spesaHtml}
+
           <div class="recipe-grid">
             ${ricetteOrdinate.map(r => `
               <div class="recipe-card">
@@ -465,7 +467,7 @@
       content.appendChild(paneRicette);
     }
 
-   // Tab Dispensa (Raggruppamento e categorizzazione automatica con elenchi puntati)
+    // Tab Dispensa
     if (data.stato_dispensa) {
       const btnScorte = document.createElement('button');
       btnScorte.className = 'tab-btn';
@@ -474,16 +476,10 @@
       btnScorte.onclick = () => switchTab(idxScorte);
       nav.appendChild(btnScorte);
 
-      // Funzione che categorizza qualsiasi lista di ingredienti
       function categorizzaIngredienti(listaOgg) {
         if (!listaOgg) return {};
+        if (!Array.isArray(listaOgg) && typeof listaOgg === 'object') return listaOgg;
 
-        // Se il modello ha già restituito un dizionario con categorie
-        if (!Array.isArray(listaOgg) && typeof listaOgg === 'object') {
-          return listaOgg;
-        }
-
-        // Se è un array piatto, lo raggruppiamo noi tramite parole chiave
         const categorie = {
           "🥩 Proteine (Carne, Pesce, Uova, Latticini)": [],
           "🌾 Carboidrati, Cereali e Legumi": [],
@@ -502,29 +498,19 @@
 
         listaOgg.forEach(ing => {
           const lower = ing.toLowerCase();
-          if (kProteine.some(k => lower.includes(k))) {
-            categorie["🥩 Proteine (Carne, Pesce, Uova, Latticini)"].push(ing);
-          } else if (kCarbo.some(k => lower.includes(k))) {
-            categorie["🌾 Carboidrati, Cereali e Legumi"].push(ing);
-          } else if (kVerdura.some(k => lower.includes(k))) {
-            categorie["🥦 Verdura e Ortaggi"].push(ing);
-          } else if (kFrutta.some(k => lower.includes(k))) {
-            categorie["🍎 Frutta"].push(ing);
-          } else if (kDolci.some(k => lower.includes(k))) {
-            categorie["🍯 Dolci, Snack e Frutta Secca"].push(ing);
-          } else if (kCondimenti.some(k => lower.includes(k))) {
-            categorie["🫒 Condimenti e Conserve"].push(ing);
-          } else {
-            categorie["🫒 Condimenti e Conserve"].push(ing);
-          }
+          if (kProteine.some(k => lower.includes(k))) categorie["🥩 Proteine (Carne, Pesce, Uova, Latticini)"].push(ing);
+          else if (kCarbo.some(k => lower.includes(k))) categorie["🌾 Carboidrati, Cereali e Legumi"].push(ing);
+          else if (kVerdura.some(k => lower.includes(k))) categorie["🥦 Verdura e Ortaggi"].push(ing);
+          else if (kFrutta.some(k => lower.includes(k))) categorie["🍎 Frutta"].push(ing);
+          else if (kDolci.some(k => lower.includes(k))) categorie["🍯 Dolci, Snack e Frutta Secca"].push(ing);
+          else categorie["🫒 Condimenti e Conserve"].push(ing);
         });
 
-        // Elimina categorie vuote
-        const risultato = {};
+        const res = {};
         for (const [cat, items] of Object.entries(categorie)) {
-          if (items.length > 0) risultato[cat] = items;
+          if (items.length > 0) res[cat] = items;
         }
-        return risultato;
+        return res;
       }
 
       function renderGroupedList(dati) {
@@ -553,7 +539,6 @@
           <p style="font-size:13px; color:var(--text-muted); margin-bottom:20px;">Riepilogo scorte diviso per categoria merceologica.</p>
 
           <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 20px;">
-            <!-- Colonna Consumati -->
             <div style="background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 16px;">
               <div style="font-size: 15px; font-weight: 700; color: var(--primary); margin-bottom: 14px;">
                 🛒 Ingredienti consumati nel piano
@@ -561,7 +546,6 @@
               ${renderGroupedList(data.stato_dispensa.utilizzate)}
             </div>
 
-            <!-- Colonna Rimanenti -->
             <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px;">
               <div style="font-size: 15px; font-weight: 700; color: var(--alexandra); margin-bottom: 14px;">
                 ✨ Ingredienti ancora disponibili
@@ -595,9 +579,12 @@
     }
   }
 
-  function closeModal(e) {
+  function closeModal() {
     document.getElementById('recipeModal').style.display = 'none';
   }
+
+  // Avvio
+  init();
 </script>
 </body>
 </html>
