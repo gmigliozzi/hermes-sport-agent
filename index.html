@@ -418,6 +418,32 @@
       const paneRicette = document.createElement('div');
       paneRicette.id = `pane-${idxRicette}`;
       paneRicette.style.display = 'none';
+
+      // Sezione Spesa Consigliata per sbloccare ricette
+      let spesaHtml = '';
+      if (data.ingredienti_da_acquistare && Object.keys(data.ingredienti_da_acquistare).length > 0) {
+        spesaHtml = `
+          <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+            <h3 style="font-size: 15px; color: #b45309; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              🛒 Ingredienti suggeriti per sbloccare nuove ricette
+            </h3>
+            <p style="font-size: 12.5px; color: #92400e; margin-bottom: 12px;">
+              Acquistando questi ingredienti potrai inserire automaticamente nei prossimi piani le ricette contrassegnate in rosso.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px;">
+              ${Object.entries(data.ingredienti_da_acquistare).map(([cat, items]) => `
+                <div style="background: #ffffff; border: 1px solid #fde68a; border-radius: 8px; padding: 10px;">
+                  <b style="font-size: 12px; color: #78350f; text-transform: uppercase;">${cat}</b>
+                  <ul style="margin-top: 6px; padding-left: 18px; font-size: 12.5px; color: #451a03;">
+                    ${items.map(it => `<li>${it}</li>`).join('')}
+                  </ul>
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
+      
       paneRicette.innerHTML = `
         <div class="day-card">
           <div class="day-title" style="margin-bottom:6px;">Ricettario</div>

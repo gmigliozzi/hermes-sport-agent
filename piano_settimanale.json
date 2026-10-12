@@ -525,8 +525,110 @@
       "fattibile": true,
       "ingredienti_mancanti": "Sostituito pollo con petto di tacchino da dispensa attiva",
       "procedimento": "Tagliare il tacchino a bocconcini e le zucchine a rondelle. Rosolare con olio in padella finché dorato, unire zucchine, succo e scorza di limone e cuocere per 10-12 minuti."
+    },
+    {
+      "titolo": "Porridge proteico al pistacchio",
+      "categoria": "Colazione",
+      "fattibile": false,
+      "ingredienti_mancanti": "Crema 100% pistacchio, pistacchi tritati, proteine in polvere vaniglia",
+      "procedimento": "Cuocere i fiocchi d'avena con latte e acqua. Mantecare con crema di pistacchio, pistacchi e proteine."
+    },
+    {
+      "titolo": "Granola fatta in casa",
+      "categoria": "Colazione",
+      "fattibile": false,
+      "ingredienti_mancanti": "Burro d'arachidi 100%, frutta secca mista, cioccolato fondente",
+      "procedimento": "Mescolare banana schiacciata, burro d'arachidi e miele. Unire avena e cuocere in forno a 160°C per 35 minuti."
+    },
+    {
+      "titolo": "Banana Biscoff Overnight Oats",
+      "categoria": "Colazione",
+      "fattibile": false,
+      "ingredienti_mancanti": "Crema spalmabile Biscoff, yogurt vaniglia",
+      "procedimento": "Unire banana schiacciata, avena, latte e yogurt in un barattolo. Guarnire con crema Biscoff sciolta."
+    },
+    {
+      "titolo": "Gnocchi alla Sorrentina Healthy",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Gnocchi freschi, mozzarella light, parmigiano, basilico",
+      "procedimento": "Cuocere gli gnocchi, condire con passata calda e mantecare con mozzarella light e basilico."
+    },
+    {
+      "titolo": "Pasta Cremosa Zucchine e Gamberi",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Gamberi, formaggio spalmabile light",
+      "procedimento": "Cuocere le zucchine, frullarne una parte con formaggio light e saltare la pasta con i gamberi."
+    },
+    {
+      "titolo": "Risotto Cremoso allo Zafferano Light",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Zafferano, formaggio spalmabile light",
+      "procedimento": "Cuocere il riso con brodo vegetale e zafferano, mantecare con formaggio spalmabile light."
+    },
+    {
+      "titolo": "Pasta al Pesto Fit di Ricotta e Basilico",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Ricotta light vaccina, basilico fresco",
+      "procedimento": "Frullare ricotta light con basilico e poca acqua di cottura, mantecare la pasta a freddo."
+    },
+    {
+      "titolo": "Pasta Tonno, Pomodorini e Olive",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Olive nere, capperi",
+      "procedimento": "Saltare pomodorini, tonno, olive e capperi in padella; unire la pasta al dente."
+    },
+    {
+      "titolo": "Pasta Cremosa Zucca e Pollo",
+      "categoria": "Pranzo",
+      "fattibile": false,
+      "ingredienti_mancanti": "Zucca fresca, rosmarino",
+      "procedimento": "Cuocere la zucca e frullarla a crema; mantecare la pasta con bocconcini di pollo rosolati."
+    },
+    {
+      "titolo": "Merluzzo con Patate e Pomodorini",
+      "categoria": "Cena",
+      "fattibile": false,
+      "ingredienti_mancanti": "Filetti di merluzzo fresco o surgelato, prezzemolo fresco",
+      "procedimento": "Dorare patate a cubetti in padella con pomodorini a metà; unire filetti di merluzzo coperti per 10 minuti."
     }
   ],
+  "ingredienti_da_acquistare": {
+    "🧀 Banco Fresco e Latticini": [
+      "Ricotta light vaccina",
+      "Mozzarella light",
+      "Formaggio spalmabile light",
+      "Yogurt vaniglia"
+    ],
+    "🐟 Pescheria e Surgelati": [
+      "Gamberi",
+      "Filetti di merluzzo fresco o surgelato"
+    ],
+    "🥦 Ortofrutta e Aromi": [
+      "Zucca fresca",
+      "Basilico fresco",
+      "Prezzemolo fresco",
+      "Rosmarino"
+    ],
+    "🥜 Dispensa Fit e Creme": [
+      "Burro d'arachidi 100%",
+      "Crema 100% pistacchio",
+      "Pistacchi tritati",
+      "Crema spalmabile Biscoff",
+      "Cioccolato fondente"
+    ],
+    "🍝 Pasta, Conserve e Polveri": [
+      "Gnocchi freschi",
+      "Olive nere",
+      "Capperi",
+      "Zafferano",
+      "Proteine in polvere vaniglia"
+    ]
+  },
   "stato_dispensa": {
     "utilizzate": {
       "Proteine (Carni/Pesce/Uova/Latticini)": [
