@@ -167,14 +167,16 @@
 <script>
   let ricetteMappa = {};
 
-  // Carica prima il ricettario statico (se presente) e poi renderizza il piano
-  fetch('dispensa/ricettario.json')
+  // NUOVO (Cache Busted dinamico):
+  const timestamp = Date.now();
+
+  fetch(`dispensa/ricettario.json?v=${timestamp}`, { cache: 'no-store' })
     .then(r => r.ok ? r.json() : [])
     .then(ricette => {
       ricette.forEach(r => { ricetteMappa[r.titolo] = r; });
-      return fetch('piano_settimanale.json');
+      return fetch(`piano_settimanale.json?v=${timestamp}`, { cache: 'no-store' });
     })
-    .catch(() => fetch('piano_settimanale.json'))
+    .catch(() => fetch(`piano_settimanale.json?v=${timestamp}`, { cache: 'no-store' }))
     .then(r => {
       if (!r.ok) throw new Error("File piano_settimanale.json non trovato");
       return r.json();
