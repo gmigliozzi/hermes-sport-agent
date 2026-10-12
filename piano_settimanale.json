@@ -122,53 +122,60 @@
     },
     {
       "giorno": "Martedì",
-      "sport": "Giuseppe: Riposo | Marinella: Danza (16:00 - 20:00) | Alexandra: Riposo",
+      "sport": "Giuseppe: Riposo / Camminata | Marinella: Danza (16:00 - 20:00) | Alexandra: Riposo",
       "colazione": {
-        "giuseppe": "Zabaione energetico (1 tuorlo d'uovo + 10g miele) abbinato a yogurt greco 0% grassi (150g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), Panfetta integrale (25g) con confettura bio (15g) e semi di chia (5g)",
-        "alexandra": "Panfetta integrale (40g) con Nutella (15g) e latte scremato UHT (30ml)",
+        "giuseppe": "Muesli con frutta secca (55g) in latte scremato UHT (180ml) con semi di zucca (10g)",
+        "marinella": "Corn flakes (30g) con latte scremato UHT (30ml), fette biscottate integrali (25g) con velo di pasta di nocciola (8g) e semi di chia (5g)",
+        "alexandra": "Panfetta integrale (50g) con velo di Nutella (15g) e latte scremato UHT (40ml)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "260 kcal | 20.0g Pro | 25.0g Carb | 9.0g Fat (2.5g saturi)",
-          "marinella": "270 kcal | 9.0g Pro | 50.0g Carb | 5.0g Fat (0.7g saturi)",
-          "alexandra": "290 kcal | 6.0g Pro | 45.0g Carb | 10.0g Fat (3.5g saturi)"
+          "giuseppe": "360 kcal | 14.5g Pro | 52.0g Carb | 10.2g Fat (1.8g saturi)",
+          "marinella": "275 kcal | 8.2g Pro | 43.5g Carb | 7.4g Fat (1.1g saturi)",
+          "alexandra": "260 kcal | 7.0g Pro | 41.0g Carb | 7.5g Fat (2.4g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Yogurt greco 0% grassi (150g) con mandorle (10g)",
-        "marinella": "Mela fresca (150g)",
-        "alexandra": "Panfetta integrale (50g) con Prosciutto crudo di San Daniele DOP (25g)",
+        "giuseppe": "Yogurt greco 0% grassi (120g) con mandorle (10g)",
+        "marinella": "Mela fresca (130g) con mandorle (8g)",
+        "alexandra": "Panfetta integrale (45g) con Prosciutto crudo di San Daniele DOP sgrassato (25g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "140 kcal | 17.0g Pro | 12.0g Carb | 4.0g Fat (0.5g saturi)",
-          "marinella": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "190 kcal | 13.0g Pro | 22.0g Carb | 4.0g Fat (1.5g saturi)"
+          "giuseppe": "145 kcal | 15.0g Pro | 5.5g Carb | 5.5g Fat (0.6g saturi)",
+          "marinella": "115 kcal | 2.5g Pro | 18.0g Carb | 4.2g Fat (0.4g saturi)",
+          "alexandra": "170 kcal | 12.5g Pro | 21.0g Carb | 3.8g Fat (1.2g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Farro perlato con lenticchie rosse e carote",
-        "ricetta_id": null,
+        "titolo": "Farro perlato tiepido con Feta greca light, mais dolce e pomodori a dadini",
+        "ricetta_id": "Insalata fredda di farro alla greca",
         "ingredienti": [
           {
             "nome": "Farro Perlato",
-            "giuseppe": "100 g",
+            "giuseppe": "90 g",
             "marinella": "60 g",
-            "alexandra": "75 g",
-            "totale": "235 g"
+            "alexandra": "70 g",
+            "totale": "220 g"
           },
           {
-            "nome": "Lenticchie rosse secche",
-            "giuseppe": "50 g",
-            "marinella": "30 g",
-            "alexandra": "40 g",
-            "totale": "120 g"
+            "nome": "Feta greca DOP light",
+            "giuseppe": "90 g",
+            "marinella": "65 g",
+            "alexandra": "50 g",
+            "totale": "205 g"
           },
           {
-            "nome": "Carote",
-            "giuseppe": "150 g",
-            "marinella": "120 g",
+            "nome": "Mais dolce cotto a vapore",
+            "giuseppe": "60 g",
+            "marinella": "45 g",
+            "alexandra": "50 g",
+            "totale": "155 g"
+          },
+          {
+            "nome": "Pomodori",
+            "giuseppe": "120 g",
+            "marinella": "100 g",
             "alexandra": "100 g",
-            "totale": "370 g"
+            "totale": "320 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -179,46 +186,46 @@
           }
         ],
         "macro": {
-          "giuseppe": "700 kcal | 35.0g Pro | 95.0g Carb | 25.0g Fat (3.5g saturi)",
-          "marinella": "450 kcal | 21.0g Pro | 60.0g Carb | 16.0g Fat (2.2g saturi)",
-          "alexandra": "550 kcal | 27.0g Pro | 75.0g Carb | 19.0g Fat (2.7g saturi)"
+          "giuseppe": "650 kcal | 33.0g Pro | 78.0g Carb | 22.5g Fat (5.8g saturi)",
+          "marinella": "460 kcal | 23.5g Pro | 53.0g Carb | 15.5g Fat (4.1g saturi)",
+          "alexandra": "530 kcal | 21.0g Pro | 65.0g Carb | 19.0g Fat (4.5g saturi)"
         }
       },
       "spuntino_pomeriggio": {
-        "giuseppe": "Mandorle (20g) e mela (100g)",
-        "marinella": "Yogurt greco 0% grassi (100g) con semi di zucca (5g)",
-        "alexandra": "Panfetta integrale (45g) con confettura bio (20g)",
+        "giuseppe": "Mela fresca (150g) con mandorle (15g)",
+        "marinella": "Yogurt greco 0% grassi (100g) con cachi maturo (100g)",
+        "alexandra": "Panfetta integrale (45g) con confettura biologica (20g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "180 kcal | 5.0g Pro | 18.0g Carb | 10.0g Fat (1.0g saturi)",
-          "marinella": "90 kcal | 11.0g Pro | 10.0g Carb | 2.0g Fat (0.3g saturi)",
-          "alexandra": "170 kcal | 4.0g Pro | 35.0g Carb | 2.0g Fat (0.5g saturi)"
+          "giuseppe": "165 kcal | 3.5g Pro | 22.0g Carb | 7.8g Fat (0.7g saturi)",
+          "marinella": "129 kcal | 10.6g Pro | 23.0g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "160 kcal | 3.5g Pro | 35.0g Carb | 0.8g Fat (0.1g saturi)"
         }
       },
       "cena": {
-        "titolo": "Petto di tacchino alla piastra con broccoli al vapore e patate",
+        "titolo": "Tagliata di petto di tacchino alle erbe con patate e finocchi",
         "ricetta_id": null,
         "ingredienti": [
           {
             "nome": "Petto di tacchino",
-            "giuseppe": "180 g",
-            "marinella": "110 g",
-            "alexandra": "80 g",
-            "totale": "370 g"
-          },
-          {
-            "nome": "Broccoli",
-            "giuseppe": "200 g",
-            "marinella": "150 g",
-            "alexandra": "120 g",
-            "totale": "470 g"
+            "giuseppe": "190 g",
+            "marinella": "120 g",
+            "alexandra": "85 g",
+            "totale": "395 g"
           },
           {
             "nome": "Patate",
-            "giuseppe": "220 g",
-            "marinella": "140 g",
-            "alexandra": "170 g",
-            "totale": "530 g"
+            "giuseppe": "200 g",
+            "marinella": "130 g",
+            "alexandra": "160 g",
+            "totale": "490 g"
+          },
+          {
+            "nome": "Finocchi",
+            "giuseppe": "150 g",
+            "marinella": "130 g",
+            "alexandra": "100 g",
+            "totale": "380 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -229,73 +236,73 @@
           }
         ],
         "macro": {
-          "giuseppe": "580 kcal | 50.0g Pro | 45.0g Carb | 23.0g Fat (3.5g saturi)",
-          "marinella": "380 kcal | 30.0g Pro | 28.0g Carb | 15.0g Fat (2.3g saturi)",
-          "alexandra": "380 kcal | 22.0g Pro | 35.0g Carb | 16.0g Fat (2.5g saturi)"
+          "giuseppe": "480 kcal | 50.0g Pro | 38.0g Carb | 16.5g Fat (2.4g saturi)",
+          "marinella": "345 kcal | 32.5g Pro | 25.5g Carb | 11.5g Fat (1.7g saturi)",
+          "alexandra": "340 kcal | 23.0g Pro | 31.0g Carb | 13.5g Fat (1.9g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "1860 kcal | 127.0g Pro | 195.0g Carb | 71.0g Fat (11.0g saturi)",
-        "marinella": "1265 kcal | 70.5g Pro | 167.0g Carb | 38.3g Fat (5.5g saturi)",
-        "alexandra": "1580 kcal | 72.0g Pro | 212.0g Carb | 51.0g Fat (10.7g saturi)"
+        "giuseppe": "1800 kcal | 116.0g Pro | 195.5g Carb | 62.5g Fat (12.3g saturi)",
+        "marinella": "1324 kcal | 77.2g Pro | 163.0g Carb | 38.8g Fat (7.3g saturi)",
+        "alexandra": "1460 kcal | 67.0g Pro | 193.0g Carb | 44.6g Fat (10.1g saturi)"
       }
     },
     {
       "giorno": "Mercoledì",
       "sport": "Giuseppe: Palestra (19:00 - 20:30) | Marinella: Fitness (09:30 - 10:30) + Danza (16:00 - 20:00) | Alexandra: Judo (19:00 - 20:30)",
       "colazione": {
-        "giuseppe": "Muesli con frutta secca ed essiccata (60g) con latte scremato UHT (200ml) e semi di chia (5g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), yogurt greco 0% grassi (80g) e mandorle (10g)",
-        "alexandra": "Yogurt greco 0% grassi (100g) con riso soffiato integrale biologico (20g) e miele di eucalipto (10g)",
+        "giuseppe": "Fette biscottate integrali (40g) con miele (15g), yogurt greco 0% (150g) e semi di chia (10g)",
+        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (30ml), fette biscottate integrali (25g) con confettura bio (15g) e yogurt greco 0% (50g)",
+        "alexandra": "Panfetta integrale (50g) con velo di pasta di nocciola (12g) e latte scremato UHT (30ml)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "390 kcal | 16.0g Pro | 60.0g Carb | 10.0g Fat (1.8g saturi)",
-          "marinella": "280 kcal | 15.0g Pro | 45.0g Carb | 6.0g Fat (0.8g saturi)",
-          "alexandra": "230 kcal | 12.0g Pro | 45.0g Carb | 2.0g Fat (0.3g saturi)"
+          "giuseppe": "385 kcal | 21.0g Pro | 54.0g Carb | 7.8g Fat (1.1g saturi)",
+          "marinella": "270 kcal | 10.5g Pro | 49.0g Carb | 2.5g Fat (0.4g saturi)",
+          "alexandra": "265 kcal | 7.5g Pro | 35.0g Carb | 9.8g Fat (1.1g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Cachi maturo (150g) e yogurt greco 0% grassi (120g)",
-        "marinella": "Yogurt greco 0% grassi (100g) e cachi maturo (100g)",
-        "alexandra": "Panfetta integrale (50g) con confettura bio (25g)",
+        "giuseppe": "Mela fresca (150g)",
+        "marinella": "Yogurt greco 0% grassi (100g) con mezza mela (70g)",
+        "alexandra": "Panfetta integrale (45g) con Prosciutto crudo di San Daniele DOP sgrassato (25g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "170 kcal | 13.0g Pro | 28.0g Carb | 0.5g Fat (0.1g saturi)",
-          "marinella": "130 kcal | 11.0g Pro | 22.0g Carb | 0.3g Fat (0.1g saturi)",
-          "alexandra": "170 kcal | 5.0g Pro | 35.0g Carb | 1.0g Fat (0.2g saturi)"
+          "giuseppe": "78 kcal | 0.5g Pro | 19.5g Carb | 0.2g Fat (0.0g saturi)",
+          "marinella": "95 kcal | 10.2g Pro | 13.5g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "170 kcal | 12.5g Pro | 21.0g Carb | 3.8g Fat (1.2g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Riso Basmati con bocconcini di tacchino al limone e zucchine",
-        "ricetta_id": "Pollo al Limone con Zucchine",
+        "titolo": "Pasta integrale al sugo leggero di pomodoro e lenticchie rosse",
+        "ricetta_id": "Spaghetti integrali alle lenticchie rosse e pomodoro",
         "ingredienti": [
           {
-            "nome": "Riso Basmati",
-            "giuseppe": "110 g",
-            "marinella": "70 g",
-            "alexandra": "85 g",
-            "totale": "265 g"
+            "nome": "Spaghetti integrali bio trafilati al bronzo",
+            "giuseppe": "75 g",
+            "marinella": "50 g",
+            "alexandra": "60 g",
+            "totale": "185 g"
           },
           {
-            "nome": "Petto di tacchino",
-            "giuseppe": "160 g",
-            "marinella": "110 g",
-            "alexandra": "90 g",
-            "totale": "360 g"
+            "nome": "Lenticchie rosse secche",
+            "giuseppe": "70 g",
+            "marinella": "45 g",
+            "alexandra": "50 g",
+            "totale": "165 g"
           },
           {
-            "nome": "Zucchine",
-            "giuseppe": "150 g",
-            "marinella": "130 g",
-            "alexandra": "120 g",
-            "totale": "400 g"
+            "nome": "Passata di pomodoro",
+            "giuseppe": "120 g",
+            "marinella": "100 g",
+            "alexandra": "100 g",
+            "totale": "320 g"
           },
           {
-            "nome": "Limone",
-            "giuseppe": "10 g",
-            "marinella": "8 g",
-            "alexandra": "8 g",
-            "totale": "26 g"
+            "nome": "Carote",
+            "giuseppe": "80 g",
+            "marinella": "60 g",
+            "alexandra": "60 g",
+            "totale": "200 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -306,39 +313,32 @@
           }
         ],
         "macro": {
-          "giuseppe": "780 kcal | 50.0g Pro | 85.0g Carb | 24.0g Fat (3.5g saturi)",
-          "marinella": "530 kcal | 34.0g Pro | 56.0g Carb | 16.0g Fat (2.3g saturi)",
-          "alexandra": "560 kcal | 30.0g Pro | 68.0g Carb | 17.0g Fat (2.5g saturi)"
+          "giuseppe": "690 kcal | 35.0g Pro | 102.0g Carb | 17.5g Fat (2.4g saturi)",
+          "marinella": "475 kcal | 23.5g Pro | 70.0g Carb | 11.8g Fat (1.6g saturi)",
+          "alexandra": "555 kcal | 26.5g Pro | 82.0g Carb | 14.0g Fat (1.9g saturi)"
         }
       },
       "spuntino_pomeriggio": {
-        "giuseppe": "Barretta arachidi, mandorle e cioccolato (35g) + Mela fresca (100g)",
-        "marinella": "Mela fresca (150g)",
-        "alexandra": "Panfetta integrale (45g) con miele di eucalipto (20g) e banana (100g)",
+        "giuseppe": "Panfetta integrale (50g) con miele (15g) e banana (100g)",
+        "marinella": "Mela fresca (120g) con mandorle (10g)",
+        "alexandra": "Panfetta integrale (45g) con confettura bio (20g) e mezza mela (70g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "240 kcal | 6.0g Pro | 32.0g Carb | 10.0g Fat (2.5g saturi)",
-          "marinella": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "250 kcal | 4.0g Pro | 55.0g Carb | 2.0g Fat (0.3g saturi)"
+          "giuseppe": "260 kcal | 5.2g Pro | 57.0g Carb | 1.8g Fat (0.3g saturi)",
+          "marinella": "120 kcal | 2.6g Pro | 17.0g Carb | 5.3g Fat (0.5g saturi)",
+          "alexandra": "195 kcal | 3.8g Pro | 43.0g Carb | 1.0g Fat (0.1g saturi)"
         }
       },
       "cena": {
-        "titolo": "Frittata di albumi con peperoni al forno e patate",
-        "ricetta_id": null,
+        "titolo": "Frittata leggera di soli albumi con broccoli al vapore e patate",
+        "ricetta_id": "Frittata soffice di albumi alle erbe",
         "ingredienti": [
           {
             "nome": "Albume d'uovo pastorizzato",
-            "giuseppe": "200 g",
-            "marinella": "120 g",
+            "giuseppe": "210 g",
+            "marinella": "125 g",
             "alexandra": "100 g",
-            "totale": "420 g"
-          },
-          {
-            "nome": "Peperoni",
-            "giuseppe": "200 g",
-            "marinella": "150 g",
-            "alexandra": "120 g",
-            "totale": "470 g"
+            "totale": "435 g"
           },
           {
             "nome": "Patate",
@@ -348,6 +348,13 @@
             "totale": "530 g"
           },
           {
+            "nome": "Broccoli",
+            "giuseppe": "160 g",
+            "marinella": "130 g",
+            "alexandra": "110 g",
+            "totale": "400 g"
+          },
+          {
             "nome": "Olio extravergine d'oliva (EVO)",
             "giuseppe": "15 g",
             "marinella": "10 g",
@@ -356,116 +363,130 @@
           }
         ],
         "macro": {
-          "giuseppe": "590 kcal | 35.0g Pro | 55.0g Carb | 25.0g Fat (3.5g saturi)",
-          "marinella": "390 kcal | 21.0g Pro | 35.0g Carb | 16.0g Fat (2.3g saturi)",
-          "alexandra": "390 kcal | 17.0g Pro | 38.0g Carb | 16.0g Fat (2.3g saturi)"
+          "giuseppe": "490 kcal | 35.0g Pro | 52.0g Carb | 16.5g Fat (2.4g saturi)",
+          "marinella": "345 kcal | 22.0g Pro | 36.0g Carb | 11.5g Fat (1.7g saturi)",
+          "alexandra": "385 kcal | 18.5g Pro | 43.0g Carb | 13.5g Fat (1.9g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "2170 kcal | 120.0g Pro | 260.0g Carb | 69.5g Fat (11.4g saturi)",
-        "marinella": "1405 kcal | 81.5g Pro | 177.3g Carb | 38.6g Fat (5.5g saturi)",
-        "alexandra": "1600 kcal | 68.0g Pro | 248.0g Carb | 38.3g Fat (5.6g saturi)"
+        "giuseppe": "1903 kcal | 111.7g Pro | 284.5g Carb | 43.8g Fat (6.2g saturi)",
+        "marinella": "1305 kcal | 68.8g Pro | 185.5g Carb | 31.3g Fat (4.2g saturi)",
+        "alexandra": "1570 kcal | 68.8g Pro | 224.0g Carb | 42.1g Fat (6.2g saturi)"
       }
     },
     {
       "giorno": "Giovedì",
-      "sport": "Giuseppe: Riposo | Marinella: Danza (16:00 - 20:00) | Alexandra: Riposo",
+      "sport": "Giuseppe: Riposo / Camminata | Marinella: Danza (16:00 - 20:00) | Alexandra: Riposo",
       "colazione": {
-        "giuseppe": "Fette biscottate integrali (60g) con confettura bio (30g) e mandorle (15g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), fette biscottate integrali (25g) con pura pasta di nocciola (6g)",
-        "alexandra": "Panfetta integrale (40g) con confettura bio (20g) e latte scremato UHT (30ml)",
+        "giuseppe": "Fiocchi d'avena integrale (45g) in latte scremato UHT (180ml) con semi di zucca (10g) e miele (10g)",
+        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (30ml), fette biscottate integrali (25g) con velo di pasta di nocciola (8g) e semi di chia (5g)",
+        "alexandra": "Riso soffiato bio (30g) in yogurt greco 0% (100g) con miele (15g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "380 kcal | 15.0g Pro | 60.0g Carb | 10.0g Fat (1.5g saturi)",
-          "marinella": "280 kcal | 8.0g Pro | 55.0g Carb | 6.0g Fat (0.8g saturi)",
-          "alexandra": "220 kcal | 5.0g Pro | 40.0g Carb | 4.0g Fat (1.0g saturi)"
+          "giuseppe": "330 kcal | 13.5g Pro | 47.0g Carb | 9.0g Fat (1.3g saturi)",
+          "marinella": "275 kcal | 8.2g Pro | 43.5g Carb | 7.4g Fat (1.1g saturi)",
+          "alexandra": "235 kcal | 12.0g Pro | 43.0g Carb | 1.0g Fat (0.2g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Yogurt greco 0% grassi (150g) e banana (100g)",
-        "marinella": "Mela fresca (150g)",
-        "alexandra": "Panfetta integrale (50g) con Prosciutto crudo di San Daniele DOP (25g)",
+        "giuseppe": "Mela fresca (150g) e yogurt greco 0% grassi (120g)",
+        "marinella": "Yogurt greco 0% grassi (100g) con mela fresca (100g)",
+        "alexandra": "Panfetta integrale (45g) con confettura bio (20g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "160 kcal | 16.0g Pro | 18.0g Carb | 0.5g Fat (0.1g saturi)",
-          "marinella": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "190 kcal | 13.0g Pro | 22.0g Carb | 4.0g Fat (1.5g saturi)"
+          "giuseppe": "149 kcal | 12.5g Pro | 25.8g Carb | 0.3g Fat (0.0g saturi)",
+          "marinella": "111 kcal | 10.3g Pro | 18.0g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "160 kcal | 3.5g Pro | 35.0g Carb | 0.8g Fat (0.1g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Rigatoni con fagioli cannellini e passata di pomodoro",
-        "ricetta_id": null,
+        "titolo": "Penne rigate con dadolata di melanzane e fagioli cannellini",
+        "ricetta_id": "Penne rustiche con cannellini e melanzane",
         "ingredienti": [
           {
-            "nome": "Rigatoni",
-            "giuseppe": "100 g",
-            "marinella": "60 g",
-            "alexandra": "75 g",
-            "totale": "235 g"
+            "nome": "Penna rigata",
+            "giuseppe": "75 g",
+            "marinella": "50 g",
+            "alexandra": "60 g",
+            "totale": "185 g"
           },
           {
             "nome": "Fagioli cannellini secchi",
-            "giuseppe": "50 g",
-            "marinella": "30 g",
-            "alexandra": "40 g",
-            "totale": "120 g"
+            "giuseppe": "70 g",
+            "marinella": "45 g",
+            "alexandra": "50 g",
+            "totale": "165 g"
           },
           {
-            "nome": "Passata di pomodoro",
+            "nome": "Melanzane",
+            "giuseppe": "140 g",
+            "marinella": "120 g",
+            "alexandra": "100 g",
+            "totale": "360 g"
+          },
+          {
+            "nome": "Cipolle rosse",
+            "giuseppe": "30 g",
+            "marinella": "20 g",
+            "alexandra": "20 g",
+            "totale": "70 g"
+          },
+          {
+            "nome": "Olio extravergine d'oliva (EVO)",
+            "giuseppe": "15 g",
+            "marinella": "10 g",
+            "alexandra": "12 g",
+            "totale": "37 g"
+          }
+        ],
+        "macro": {
+          "giuseppe": "645 kcal | 30.5g Pro | 97.0g Carb | 17.5g Fat (2.4g saturi)",
+          "marinella": "440 kcal | 20.5g Pro | 66.0g Carb | 11.5g Fat (1.6g saturi)",
+          "alexandra": "520 kcal | 23.5g Pro | 78.0g Carb | 14.0g Fat (1.9g saturi)"
+        }
+      },
+      "spuntino_pomeriggio": {
+        "giuseppe": "Mela fresca (130g) con mandorle (15g)",
+        "marinella": "Mela fresca (120g) con mandorle (10g)",
+        "alexandra": "Mela fresca (130g) con mandorle (10g)",
+        "ricetta_id": null,
+        "macro": {
+          "giuseppe": "155 kcal | 3.2g Pro | 20.0g Carb | 7.8g Fat (0.7g saturi)",
+          "marinella": "120 kcal | 2.6g Pro | 17.0g Carb | 5.3g Fat (0.5g saturi)",
+          "alexandra": "125 kcal | 2.8g Pro | 18.0g Carb | 5.3g Fat (0.5g saturi)"
+        }
+      },
+      "cena": {
+        "titolo": "Tranci di tonno fresco scottati con insalata di carote e lattuga",
+        "ricetta_id": null,
+        "ingredienti": [
+          {
+            "nome": "Tonno rosso fresco a trancio",
+            "giuseppe": "180 g",
+            "marinella": "115 g",
+            "alexandra": "85 g",
+            "totale": "380 g"
+          },
+          {
+            "nome": "Patate",
+            "giuseppe": "200 g",
+            "marinella": "130 g",
+            "alexandra": "160 g",
+            "totale": "490 g"
+          },
+          {
+            "nome": "Carote",
             "giuseppe": "100 g",
             "marinella": "80 g",
             "alexandra": "70 g",
             "totale": "250 g"
           },
           {
-            "nome": "Olio extravergine d'oliva (EVO)",
-            "giuseppe": "15 g",
-            "marinella": "10 g",
-            "alexandra": "12 g",
-            "totale": "37 g"
-          }
-        ],
-        "macro": {
-          "giuseppe": "700 kcal | 35.0g Pro | 95.0g Carb | 25.0g Fat (3.5g saturi)",
-          "marinella": "450 kcal | 21.0g Pro | 60.0g Carb | 16.0g Fat (2.2g saturi)",
-          "alexandra": "550 kcal | 27.0g Pro | 75.0g Carb | 19.0g Fat (2.7g saturi)"
-        }
-      },
-      "spuntino_pomeriggio": {
-        "giuseppe": "Mela fresca (150g)",
-        "marinella": "Yogurt greco 0% grassi (100g) con semi di chia (5g)",
-        "alexandra": "Panfetta integrale (45g) con miele di eucalipto (20g) e cachi maturo (100g)",
-        "ricetta_id": null,
-        "macro": {
-          "giuseppe": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "marinella": "90 kcal | 11.0g Pro | 10.0g Carb | 2.0g Fat (0.3g saturi)",
-          "alexandra": "220 kcal | 4.0g Pro | 48.0g Carb | 2.0g Fat (0.3g saturi)"
-        }
-      },
-      "cena": {
-        "titolo": "Tranci di tonno rosso fresco alla piastra con finocchi al vapore e patate",
-        "ricetta_id": null,
-        "ingredienti": [
-          {
-            "nome": "Tonno rosso fresco a trancio",
-            "giuseppe": "180 g",
-            "marinella": "120 g",
-            "alexandra": "85 g",
-            "totale": "385 g"
-          },
-          {
-            "nome": "Finocchi",
-            "giuseppe": "200 g",
-            "marinella": "150 g",
-            "alexandra": "120 g",
-            "totale": "470 g"
-          },
-          {
-            "nome": "Patate",
-            "giuseppe": "220 g",
-            "marinella": "140 g",
-            "alexandra": "170 g",
-            "totale": "530 g"
+            "nome": "Lattuga",
+            "giuseppe": "80 g",
+            "marinella": "60 g",
+            "alexandra": "60 g",
+            "totale": "200 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -476,45 +497,45 @@
           }
         ],
         "macro": {
-          "giuseppe": "600 kcal | 47.0g Pro | 45.0g Carb | 25.0g Fat (4.5g saturi)",
-          "marinella": "400 kcal | 31.0g Pro | 30.0g Carb | 17.0g Fat (3.0g saturi)",
-          "alexandra": "390 kcal | 21.0g Pro | 36.0g Carb | 18.0g Fat (3.2g saturi)"
+          "giuseppe": "540 kcal | 49.0g Pro | 40.0g Carb | 20.0g Fat (3.8g saturi)",
+          "marinella": "360 kcal | 31.5g Pro | 27.0g Carb | 13.5g Fat (2.5g saturi)",
+          "alexandra": "380 kcal | 24.5g Pro | 32.0g Carb | 15.5g Fat (2.8g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "1915 kcal | 113.5g Pro | 237.0g Carb | 60.8g Fat (9.6g saturi)",
-        "marinella": "1295 kcal | 71.5g Pro | 174.3g Carb | 41.3g Fat (6.3g saturi)",
-        "alexandra": "1570 kcal | 70.0g Pro | 221.0g Carb | 47.0g Fat (8.7g saturi)"
+        "giuseppe": "1819 kcal | 107.7g Pro | 229.8g Carb | 54.6g Fat (8.2g saturi)",
+        "marinella": "1306 kcal | 73.1g Pro | 171.5g Carb | 37.9g Fat (5.7g saturi)",
+        "alexandra": "1420 kcal | 66.3g Pro | 206.0g Carb | 36.6g Fat (5.5g saturi)"
       }
     },
     {
       "giorno": "Venerdì",
       "sport": "Giuseppe: Palestra (19:00 - 20:30) | Marinella: Fitness (09:30 - 10:30) + Danza (16:00 - 20:00) | Alexandra: Judo (19:00 - 20:30)",
       "colazione": {
-        "giuseppe": "Riso soffiato integrale biologico (50g) con yogurt greco 0% grassi (150g) e miele di eucalipto (10g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), yogurt greco 0% grassi (80g) e semi di zucca (5g)",
-        "alexandra": "Panfetta integrale (40g) con Nutella (15g) e latte scremato UHT (30ml)",
-        "ricetta_id": null,
+        "giuseppe": "Fiocchi d'avena (50g) in latte scremato UHT (200ml) con pasta pura di nocciola (15g) e miele (10g)",
+        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (30ml), fette biscottate integrali (25g) con velo di pasta di nocciola (8g) e semi di chia (5g)",
+        "alexandra": "Panfetta integrale (50g) con velo di pasta di nocciola (12g) e latte scremato UHT (30ml)",
+        "ricetta_id": "Porridge cremoso avena e nocciola",
         "macro": {
-          "giuseppe": "300 kcal | 20.0g Pro | 50.0g Carb | 3.0g Fat (0.5g saturi)",
-          "marinella": "270 kcal | 15.0g Pro | 45.0g Carb | 6.0g Fat (0.8g saturi)",
-          "alexandra": "290 kcal | 6.0g Pro | 45.0g Carb | 10.0g Fat (3.5g saturi)"
+          "giuseppe": "378 kcal | 15.6g Pro | 50.3g Carb | 12.7g Fat (1.3g saturi)",
+          "marinella": "275 kcal | 8.2g Pro | 43.5g Carb | 7.4g Fat (1.1g saturi)",
+          "alexandra": "265 kcal | 7.5g Pro | 35.0g Carb | 9.8g Fat (1.1g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Mela fresca (150g) e mandorle (15g)",
-        "marinella": "Yogurt greco 0% grassi (100g) e mela fresca (100g)",
-        "alexandra": "Panfetta integrale (50g) con Prosciutto crudo di San Daniele DOP (25g)",
+        "giuseppe": "Yogurt greco 0% grassi (120g) con mela fresca (120g)",
+        "marinella": "Mela fresca (120g) e mandorle (8g)",
+        "alexandra": "Panfetta integrale (45g) con Prosciutto crudo di San Daniele DOP sgrassato (20g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "150 kcal | 6.0g Pro | 25.0g Carb | 4.0g Fat (0.5g saturi)",
-          "marinella": "110 kcal | 11.0g Pro | 18.0g Carb | 0.3g Fat (0.1g saturi)",
-          "alexandra": "190 kcal | 13.0g Pro | 22.0g Carb | 4.0g Fat (1.5g saturi)"
+          "giuseppe": "135 kcal | 12.0g Pro | 22.0g Carb | 0.3g Fat (0.0g saturi)",
+          "marinella": "110 kcal | 2.3g Pro | 17.0g Carb | 4.2g Fat (0.4g saturi)",
+          "alexandra": "155 kcal | 11.5g Pro | 21.0g Carb | 3.2g Fat (1.0g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Riso Basmati con fettine di bovino adulto e melanzane",
-        "ricetta_id": null,
+        "titolo": "Riso Basmati con tocchetti di petto di tacchino al limone e peperoni",
+        "ricetta_id": "Tacchino saltato con peperoni dolci",
         "ingredienti": [
           {
             "nome": "Riso Basmati",
@@ -524,18 +545,25 @@
             "totale": "265 g"
           },
           {
-            "nome": "Fettine bovino adulto \"tuttofare\"",
-            "giuseppe": "160 g",
+            "nome": "Petto di tacchino",
+            "giuseppe": "170 g",
             "marinella": "110 g",
-            "alexandra": "90 g",
-            "totale": "360 g"
+            "alexandra": "85 g",
+            "totale": "365 g"
           },
           {
-            "nome": "Melanzane",
+            "nome": "Peperoni",
             "giuseppe": "150 g",
-            "marinella": "130 g",
-            "alexandra": "120 g",
-            "totale": "400 g"
+            "marinella": "120 g",
+            "alexandra": "100 g",
+            "totale": "370 g"
+          },
+          {
+            "nome": "Limone",
+            "giuseppe": "20 g",
+            "marinella": "20 g",
+            "alexandra": "15 g",
+            "totale": "55 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -546,39 +574,39 @@
           }
         ],
         "macro": {
-          "giuseppe": "750 kcal | 48.0g Pro | 85.0g Carb | 22.0g Fat (3.5g saturi)",
-          "marinella": "500 kcal | 32.0g Pro | 55.0g Carb | 15.0g Fat (2.3g saturi)",
-          "alexandra": "550 kcal | 27.0g Pro | 68.0g Carb | 17.0g Fat (2.7g saturi)"
+          "giuseppe": "720 kcal | 51.0g Pro | 86.0g Carb | 18.5g Fat (2.7g saturi)",
+          "marinella": "485 kcal | 34.0g Pro | 56.0g Carb | 12.5g Fat (1.8g saturi)",
+          "alexandra": "545 kcal | 28.0g Pro | 69.0g Carb | 15.0g Fat (2.2g saturi)"
         }
       },
       "spuntino_pomeriggio": {
-        "giuseppe": "Barretta arachidi, mandorle e cioccolato (35g) + Cachi maturo (100g)",
-        "marinella": "Cachi maturo (150g)",
-        "alexandra": "Panfetta integrale (45g) con confettura bio (20g) e mela (100g)",
+        "giuseppe": "Panfetta integrale (50g) con miele (15g) e banana (100g)",
+        "marinella": "Yogurt greco 0% grassi (100g) con cachi maturo (100g)",
+        "alexandra": "Panfetta integrale (45g) con confettura bio (20g) e mela (80g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "240 kcal | 6.0g Pro | 32.0g Carb | 10.0g Fat (2.5g saturi)",
-          "marinella": "105 kcal | 0.8g Pro | 27.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "170 kcal | 4.0g Pro | 35.0g Carb | 2.0g Fat (0.3g saturi)"
+          "giuseppe": "260 kcal | 5.2g Pro | 57.0g Carb | 1.8g Fat (0.3g saturi)",
+          "marinella": "129 kcal | 10.6g Pro | 23.0g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "205 kcal | 3.8g Pro | 45.0g Carb | 1.0g Fat (0.1g saturi)"
         }
       },
       "cena": {
-        "titolo": "Feta greca light al forno con carote al vapore e patate",
+        "titolo": "Uova in camicia su letto di patate e broccoli cotti a vapore",
         "ricetta_id": null,
         "ingredienti": [
           {
-            "nome": "Feta greca DOP light",
+            "nome": "Uova fresche intere",
             "giuseppe": "100 g",
-            "marinella": "70 g",
-            "alexandra": "60 g",
-            "totale": "230 g"
+            "marinella": "50 g",
+            "alexandra": "50 g",
+            "totale": "200 g"
           },
           {
-            "nome": "Carote",
-            "giuseppe": "200 g",
-            "marinella": "150 g",
-            "alexandra": "120 g",
-            "totale": "470 g"
+            "nome": "Albume d'uovo pastorizzato",
+            "giuseppe": "120 g",
+            "marinella": "80 g",
+            "alexandra": "50 g",
+            "totale": "250 g"
           },
           {
             "nome": "Patate",
@@ -588,6 +616,13 @@
             "totale": "530 g"
           },
           {
+            "nome": "Broccoli",
+            "giuseppe": "150 g",
+            "marinella": "120 g",
+            "alexandra": "100 g",
+            "totale": "370 g"
+          },
+          {
             "nome": "Olio extravergine d'oliva (EVO)",
             "giuseppe": "15 g",
             "marinella": "10 g",
@@ -596,73 +631,73 @@
           }
         ],
         "macro": {
-          "giuseppe": "590 kcal | 30.0g Pro | 55.0g Carb | 25.0g Fat (10.0g saturi)",
-          "marinella": "390 kcal | 20.0g Pro | 35.0g Carb | 16.0g Fat (7.0g saturi)",
-          "alexandra": "380 kcal | 16.0g Pro | 38.0g Carb | 16.0g Fat (6.0g saturi)"
+          "giuseppe": "570 kcal | 37.0g Pro | 48.0g Carb | 25.0g Fat (5.5g saturi)",
+          "marinella": "375 kcal | 22.5g Pro | 33.0g Carb | 16.5g Fat (3.4g saturi)",
+          "alexandra": "390 kcal | 18.0g Pro | 39.0g Carb | 17.5g Fat (3.5g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "2030 kcal | 110.0g Pro | 247.0g Carb | 64.0g Fat (19.0g saturi)",
-        "marinella": "1375 kcal | 78.8g Pro | 180.3g Carb | 37.6g Fat (10.2g saturi)",
-        "alexandra": "1580 kcal | 66.0g Pro | 208.0g Carb | 49.0g Fat (14.0g saturi)"
+        "giuseppe": "2063 kcal | 120.8g Pro | 263.3g Carb | 58.3g Fat (9.8g saturi)",
+        "marinella": "1374 kcal | 77.6g Pro | 172.5g Carb | 40.8g Fat (6.7g saturi)",
+        "alexandra": "1560 kcal | 68.8g Pro | 209.0g Carb | 46.5g Fat (7.9g saturi)"
       }
     },
     {
       "giorno": "Sabato",
-      "sport": "Giuseppe: Ciclismo Endurance | Marinella: Riposo | Alexandra: Riposo",
+      "sport": "Giuseppe: Ciclismo Endurance su strada (mattina/pomeriggio) | Marinella: Relax / Camminata | Alexandra: Riposo",
       "colazione": {
-        "giuseppe": "Fiocchi d'avena integrale (80g) cotti in latte scremato UHT (250ml) con miele di eucalipto (20g) e banana (150g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), fette biscottate integrali (25g) con confettura bio (15g) e semi di chia (5g)",
-        "alexandra": "Panfetta integrale (40g) con Nutella (15g) e latte scremato UHT (30ml)",
-        "ricetta_id": null,
+        "giuseppe": "Fiocchi d'avena (70g) cotti in latte scremato UHT (250ml) con miele (25g), pura pasta di nocciola (15g) e banana (100g)",
+        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (30ml), fette biscottate integrali (25g) con confettura bio (15g) e semi di chia (5g)",
+        "alexandra": "Panfetta integrale (50g) con velo di Nutella (15g) e latte scremato UHT (35ml)",
+        "ricetta_id": "Porridge energetico da ciclismo",
         "macro": {
-          "giuseppe": "600 kcal | 25.0g Pro | 100.0g Carb | 12.0g Fat (2.0g saturi)",
-          "marinella": "270 kcal | 9.0g Pro | 50.0g Carb | 5.0g Fat (0.7g saturi)",
-          "alexandra": "290 kcal | 6.0g Pro | 45.0g Carb | 10.0g Fat (3.5g saturi)"
+          "giuseppe": "620 kcal | 21.0g Pro | 98.0g Carb | 16.5g Fat (2.2g saturi)",
+          "marinella": "250 kcal | 7.0g Pro | 48.0g Carb | 3.5g Fat (0.5g saturi)",
+          "alexandra": "260 kcal | 7.0g Pro | 41.0g Carb | 7.5g Fat (2.4g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Panfetta integrale (80g) con miele di eucalipto (30g) e banana (150g)",
-        "marinella": "Mela fresca (150g)",
-        "alexandra": "Panfetta integrale (50g) con Prosciutto crudo di San Daniele DOP (25g)",
+        "giuseppe": "Panfetta integrale (60g) con miele (20g) e mela fresca (150g) durante il percorso bici",
+        "marinella": "Yogurt greco 0% grassi (100g) con mela fresca (100g)",
+        "alexandra": "Panfetta integrale (45g) con confettura bio (20g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "450 kcal | 10.0g Pro | 90.0g Carb | 5.0g Fat (1.0g saturi)",
-          "marinella": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "190 kcal | 13.0g Pro | 22.0g Carb | 4.0g Fat (1.5g saturi)"
+          "giuseppe": "290 kcal | 5.5g Pro | 64.0g Carb | 1.5g Fat (0.2g saturi)",
+          "marinella": "111 kcal | 10.3g Pro | 18.0g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "160 kcal | 3.5g Pro | 35.0g Carb | 0.8g Fat (0.1g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Spaghetti integrali al pomodoro fresco con bocconcini di tacchino",
-        "ricetta_id": null,
+        "titolo": "Fusilli al bronzo con fettine di bovino a straccetti e melanzane trifolate",
+        "ricetta_id": "Straccetti di manzo con fusilli e melanzane",
         "ingredienti": [
           {
-            "nome": "Spaghetti integrali bio trafilati al bronzo",
+            "nome": "Fusillo",
             "giuseppe": "115 g",
-            "marinella": "75 g",
-            "alexandra": "90 g",
-            "totale": "280 g"
+            "marinella": "65 g",
+            "alexandra": "80 g",
+            "totale": "260 g"
           },
           {
-            "nome": "Petto di tacchino",
-            "giuseppe": "160 g",
-            "marinella": "110 g",
-            "alexandra": "90 g",
-            "totale": "360 g"
+            "nome": "Fettine bovino adulto \"tuttofare\"",
+            "giuseppe": "170 g",
+            "marinella": "105 g",
+            "alexandra": "80 g",
+            "totale": "355 g"
           },
           {
-            "nome": "Pomodori",
+            "nome": "Melanzane",
             "giuseppe": "150 g",
-            "marinella": "130 g",
-            "alexandra": "120 g",
-            "totale": "400 g"
+            "marinella": "120 g",
+            "alexandra": "100 g",
+            "totale": "370 g"
           },
           {
             "nome": "Passata di pomodoro",
-            "giuseppe": "50 g",
-            "marinella": "40 g",
-            "alexandra": "30 g",
-            "totale": "120 g"
+            "giuseppe": "100 g",
+            "marinella": "80 g",
+            "alexandra": "80 g",
+            "totale": "260 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
@@ -673,69 +708,134 @@
           }
         ],
         "macro": {
-          "giuseppe": "800 kcal | 55.0g Pro | 95.0g Carb | 25.0g Fat (3.5g saturi)",
-          "marinella": "550 kcal | 37.0g Pro | 65.0g Carb | 17.0g Fat (2.5g saturi)",
-          "alexandra": "600 kcal | 32.0g Pro | 75.0g Carb | 18.0g Fat (2.7g saturi)"
+          "giuseppe": "830 kcal | 57.0g Pro | 102.0g Carb | 23.5g Fat (5.8g saturi)",
+          "marinella": "485 kcal | 34.5g Pro | 59.0g Carb | 14.0g Fat (3.5g saturi)",
+          "alexandra": "570 kcal | 27.5g Pro | 72.0g Carb | 17.5g Fat (4.1g saturi)"
         }
       },
       "spuntino_pomeriggio": {
-        "giuseppe": "Yogurt greco 0% grassi (200g) con miele di eucalipto (15g) e mandorle (20g)",
-        "marinella": "Yogurt greco 0% grassi (100g) con cachi maturo (100g)",
-        "alexandra": "Panfetta integrale (45g) con miele di eucalipto (20g) e mela (100g)",
+        "giuseppe": "Yogurt greco 0% grassi (150g) con cachi maturo (120g) e muesli (30g)",
+        "marinella": "Mela fresca (120g) con mandorle (8g)",
+        "alexandra": "Mela fresca (120g) con mandorle (10g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "250 kcal | 25.0g Pro | 30.0g Carb | 7.0g Fat (1.0g saturi)",
-          "marinella": "130 kcal | 11.0g Pro | 22.0g Carb | 0.3g Fat (0.1g saturi)",
-          "alexandra": "220 kcal | 4.0g Pro | 48.0g Carb | 2.0g Fat (0.3g saturi)"
+          "giuseppe": "270 kcal | 18.5g Pro | 42.0g Carb | 3.5g Fat (0.6g saturi)",
+          "marinella": "110 kcal | 2.3g Pro | 17.0g Carb | 4.2g Fat (0.4g saturi)",
+          "alexandra": "120 kcal | 2.6g Pro | 17.0g Carb | 5.3g Fat (0.5g saturi)"
         }
       },
       "cena": {
-        "titolo": "Pizza in pizzeria con antipasto",
+        "titolo": "Pizza in pizzeria con antipasto condiviso (Cena libera controllata di famiglia)",
         "ricetta_id": null,
-        "ingredienti": [],
+        "ingredienti": [
+          {
+            "nome": "Antipasto leggero della casa",
+            "giuseppe": "1 porzione",
+            "marinella": "1 porzione",
+            "alexandra": "1 porzione",
+            "totale": "3 porzioni"
+          },
+          {
+            "nome": "Pizza Margherita tradizionale",
+            "giuseppe": "1 intera",
+            "marinella": "3/4 pizza",
+            "alexandra": "3/4 pizza",
+            "totale": "2.5 pizze"
+          }
+        ],
         "macro": {
-          "giuseppe": "1000 kcal | 50.0g Pro | 120.0g Carb | 35.0g Fat (10.0g saturi)",
-          "marinella": "700 kcal | 35.0g Pro | 80.0g Carb | 25.0g Fat (8.0g saturi)",
-          "alexandra": "600 kcal | 30.0g Pro | 70.0g Carb | 20.0g Fat (6.0g saturi)"
+          "giuseppe": "950 kcal | 36.0g Pro | 128.0g Carb | 32.0g Fat (9.5g saturi)",
+          "marinella": "550 kcal | 21.0g Pro | 76.0g Carb | 17.5g Fat (5.5g saturi)",
+          "alexandra": "550 kcal | 21.0g Pro | 76.0g Carb | 17.5g Fat (5.5g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "3100 kcal | 165.0g Pro | 445.0g Carb | 84.0g Fat (17.5g saturi)",
-        "marinella": "1725 kcal | 92.5g Pro | 236.3g Carb | 47.6g Fat (11.3g saturi)",
-        "alexandra": "1900 kcal | 85.0g Pro | 260.0g Carb | 54.0g Fat (14.0g saturi)"
+        "giuseppe": "2960 kcal | 138.0g Pro | 434.0g Carb | 77.0g Fat (18.3g saturi)",
+        "marinella": "1506 kcal | 75.1g Pro | 218.0g Carb | 39.4g Fat (9.9g saturi)",
+        "alexandra": "1660 kcal | 61.6g Pro | 241.0g Carb | 48.6g Fat (13.6g saturi)"
       }
     },
     {
       "giorno": "Domenica",
-      "sport": "Tutti: Riposo",
+      "sport": "Giuseppe: Riposo e recupero attivo | Marinella: Relax | Alexandra: Riposo",
       "colazione": {
-        "giuseppe": "Corn flakes (60g) con latte scremato UHT (200ml) e pura pasta di nocciola (15g)",
-        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (60ml), fette biscottate integrali (25g) con confettura bio (15g) e mandorle (10g)",
-        "alexandra": "Yogurt greco 0% grassi (100g) con riso soffiato integrale biologico (20g) e miele di eucalipto (10g)",
-        "ricetta_id": null,
+        "giuseppe": "Zabaione energetico con tuorlo d'uovo fresco (1 tuorlo) montato con miele (15g), abbinato a yogurt greco 0% (150g) e fette biscottate (30g)",
+        "marinella": "Corn flakes (30g) ammorbiditi con latte scremato UHT (30ml), fette biscottate integrali (25g) con confettura bio (15g) e velo di pasta di nocciola (6g)",
+        "alexandra": "Riso soffiato bio (30g) in yogurt greco 0% (100g) con miele (15g)",
+        "ricetta_id": "Zabaione proteico con yogurt greco",
         "macro": {
-          "giuseppe": "420 kcal | 15.0g Pro | 70.0g Carb | 10.0g Fat (1.5g saturi)",
-          "marinella": "310 kcal | 9.0g Pro | 55.0g Carb | 8.0g Fat (1.0g saturi)",
-          "alexandra": "230 kcal | 12.0g Pro | 45.0g Carb | 2.0g Fat (0.3g saturi)"
+          "giuseppe": "385 kcal | 21.5g Pro | 47.0g Carb | 10.5g Fat (2.8g saturi)",
+          "marinella": "270 kcal | 7.8g Pro | 45.0g Carb | 6.5g Fat (0.9g saturi)",
+          "alexandra": "235 kcal | 12.0g Pro | 43.0g Carb | 1.0g Fat (0.2g saturi)"
         }
       },
       "spuntino_mattina": {
-        "giuseppe": "Mela fresca (150g) e yogurt greco 0% grassi (120g)",
-        "marinella": "Yogurt greco 0% grassi (100g) e banana (100g)",
-        "alexandra": "Panfetta integrale (50g) con Prosciutto crudo di San Daniele DOP (25g)",
+        "giuseppe": "Mela fresca (150g)",
+        "marinella": "Mela fresca (120g) con mandorle (8g)",
+        "alexandra": "Panfetta integrale (45g) con confettura biologica (20g)",
         "ricetta_id": null,
         "macro": {
-          "giuseppe": "150 kcal | 13.0g Pro | 26.0g Carb | 0.3g Fat (0.0g saturi)",
-          "marinella": "140 kcal | 11.0g Pro | 27.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "190 kcal | 13.0g Pro | 22.0g Carb | 4.0g Fat (1.5g saturi)"
+          "giuseppe": "78 kcal | 0.5g Pro | 19.5g Carb | 0.2g Fat (0.0g saturi)",
+          "marinella": "110 kcal | 2.3g Pro | 17.0g Carb | 4.2g Fat (0.4g saturi)",
+          "alexandra": "160 kcal | 3.5g Pro | 35.0g Carb | 0.8g Fat (0.1g saturi)"
         }
       },
       "pranzo": {
-        "titolo": "Farro perlato con uova strapazzate e mais dolce",
+        "titolo": "Farfalle al bronzo con tocchetti di petto di tacchino e zucchine",
         "ricetta_id": null,
         "ingredienti": [
           {
-            "nome": "Farro Perlato",
+            "nome": "Farfalla",
+            "giuseppe": "105 g",
+            "marinella": "65 g",
+            "alexandra": "80 g",
+            "totale": "250 g"
+          },
+          {
+            "nome": "Petto di tacchino",
+            "giuseppe": "170 g",
+            "marinella": "110 g",
+            "alexandra": "85 g",
+            "totale": "365 g"
+          },
+          {
+            "nome": "Zucchine",
+            "giuseppe": "150 g",
+            "marinella": "120 g",
+            "alexandra": "100 g",
+            "totale": "370 g"
+          },
+          {
+            "nome": "Olio extravergine d'oliva (EVO)",
+            "giuseppe": "15 g",
+            "marinella": "10 g",
+            "alexandra": "12 g",
+            "totale": "37 g"
+          }
+        ],
+        "macro": {
+          "giuseppe": "690 kcal | 51.0g Pro | 84.0g Carb | 17.5g Fat (2.7g saturi)",
+          "marinella": "455 kcal | 34.0g Pro | 54.0g Carb | 11.5g Fat (1.8g saturi)",
+          "alexandra": "540 kcal | 28.0g Pro | 67.0g Carb | 14.5g Fat (2.2g saturi)"
+        }
+      },
+      "spuntino_pomeriggio": {
+        "giuseppe": "Yogurt greco 0% grassi (120g) con cachi maturo (100g)",
+        "marinella": "Yogurt greco 0% grassi (100g) con cachi maturo (100g)",
+        "alexandra": "Panfetta integrale (40g) con confettura bio (15g) e mela (80g)",
+        "ricetta_id": null,
+        "macro": {
+          "giuseppe": "145 kcal | 12.5g Pro | 23.0g Carb | 0.3g Fat (0.0g saturi)",
+          "marinella": "129 kcal | 10.6g Pro | 23.0g Carb | 0.2g Fat (0.0g saturi)",
+          "alexandra": "180 kcal | 3.2g Pro | 40.0g Carb | 0.8g Fat (0.1g saturi)"
+        }
+      },
+      "cena": {
+        "titolo": "Rotolo di piadina leggera con uovo sodo, lattuga e finocchi croccanti",
+        "ricetta_id": "Piadina ripiena leggera con verdure",
+        "ingredienti": [
+          {
+            "nome": "Piadina",
             "giuseppe": "100 g",
             "marinella": "60 g",
             "alexandra": "75 g",
@@ -750,69 +850,26 @@
           },
           {
             "nome": "Albume d'uovo pastorizzato",
-            "giuseppe": "100 g",
-            "marinella": "50 g",
+            "giuseppe": "120 g",
+            "marinella": "70 g",
             "alexandra": "50 g",
-            "totale": "200 g"
-          },
-          {
-            "nome": "Mais dolce cotto a vapore",
-            "giuseppe": "150 g",
-            "marinella": "120 g",
-            "alexandra": "100 g",
-            "totale": "370 g"
-          },
-          {
-            "nome": "Olio extravergine d'oliva (EVO)",
-            "giuseppe": "15 g",
-            "marinella": "10 g",
-            "alexandra": "12 g",
-            "totale": "37 g"
-          }
-        ],
-        "macro": {
-          "giuseppe": "750 kcal | 45.0g Pro | 80.0g Carb | 30.0g Fat (6.0g saturi)",
-          "marinella": "480 kcal | 28.0g Pro | 50.0g Carb | 19.0g Fat (3.8g saturi)",
-          "alexandra": "580 kcal | 32.0g Pro | 65.0g Carb | 22.0g Fat (4.5g saturi)"
-        }
-      },
-      "spuntino_pomeriggio": {
-        "giuseppe": "Mandorle (20g) e cachi maturo (100g)",
-        "marinella": "Mela fresca (150g)",
-        "alexandra": "Panfetta integrale (45g) con confettura bio (20g) e banana (100g)",
-        "ricetta_id": null,
-        "macro": {
-          "giuseppe": "180 kcal | 5.0g Pro | 18.0g Carb | 10.0g Fat (1.0g saturi)",
-          "marinella": "75 kcal | 0.5g Pro | 19.0g Carb | 0.3g Fat (0.0g saturi)",
-          "alexandra": "220 kcal | 4.0g Pro | 48.0g Carb | 2.0g Fat (0.3g saturi)"
-        }
-      },
-      "cena": {
-        "titolo": "Petto di tacchino alla piastra con lattuga e patate",
-        "ricetta_id": null,
-        "ingredienti": [
-          {
-            "nome": "Petto di tacchino",
-            "giuseppe": "180 g",
-            "marinella": "110 g",
-            "alexandra": "80 g",
-            "totale": "370 g"
+            "totale": "240 g"
           },
           {
             "nome": "Lattuga",
+            "giuseppe": "100 g",
+            "marinella": "80 g",
+            "alexandra": "70 g",
+            "totale": "250 g"
+          },
+          {
+            "nome": "Finocchi",
             "giuseppe": "120 g",
             "marinella": "100 g",
             "alexandra": "80 g",
             "totale": "300 g"
           },
           {
-            "nome": "Patate",
-            "giuseppe": "220 g",
-            "marinella": "140 g",
-            "alexandra": "170 g",
-            "totale": "530 g"
-          },
-          {
             "nome": "Olio extravergine d'oliva (EVO)",
             "giuseppe": "15 g",
             "marinella": "10 g",
@@ -821,88 +878,143 @@
           }
         ],
         "macro": {
-          "giuseppe": "580 kcal | 50.0g Pro | 45.0g Carb | 23.0g Fat (3.5g saturi)",
-          "marinella": "380 kcal | 30.0g Pro | 28.0g Carb | 15.0g Fat (2.3g saturi)",
-          "alexandra": "380 kcal | 22.0g Pro | 35.0g Carb | 16.0g Fat (2.5g saturi)"
+          "giuseppe": "560 kcal | 34.0g Pro | 52.0g Carb | 22.0g Fat (5.0g saturi)",
+          "marinella": "360 kcal | 21.0g Pro | 32.0g Carb | 15.5g Fat (3.2g saturi)",
+          "alexandra": "410 kcal | 18.0g Pro | 40.0g Carb | 17.5g Fat (3.4g saturi)"
         }
       },
       "riepilogo": {
-        "giuseppe": "2080 kcal | 128.0g Pro | 239.0g Carb | 73.3g Fat (12.0g saturi)",
-        "marinella": "1385 kcal | 78.5g Pro | 179.3g Carb | 42.6g Fat (7.1g saturi)",
-        "alexandra": "1600 kcal | 83.0g Pro | 215.0g Carb | 46.5g Fat (9.1g saturi)"
+        "giuseppe": "1858 kcal | 119.5g Pro | 225.5g Carb | 50.5g Fat (10.5g saturi)",
+        "marinella": "1324 kcal | 75.7g Pro | 171.0g Carb | 37.9g Fat (6.3g saturi)",
+        "alexandra": "1525 kcal | 64.7g Pro | 225.0g Carb | 34.6g Fat (6.0g saturi)"
       }
     }
   ],
   "ricette_disponibili": [
     {
-      "titolo": "Riso Basmati con Tonno e Pomodorini",
-      "categoria": "Pranzo",
+      "titolo": "Porridge cremoso avena e nocciola",
+      "categoria": "Colazione",
       "fattibile": true,
       "ingredienti_mancanti": "",
-      "procedimento": "Cuocere il riso basmati in acqua leggermente salata, poi scolarlo e lasciarlo intiepidire. Tagliare i pomodorini a metà e unirli al riso con il tonno sgocciolato. Condire con olio extravergine, basilico fresco, un pizzico di sale. Mescolare bene e servire tiepido o freddo."
+      "procedimento": "Cuocere l'avena nel latte scremato a fiamma dolce per 3-4 minuti mescolando costantemente. Guarnire con pasta pura di nocciola e un filo di miele."
     },
     {
-      "titolo": "Pollo al Limone con Zucchine",
+      "titolo": "Insalata fredda di farro alla greca",
       "categoria": "Pranzo",
       "fattibile": true,
       "ingredienti_mancanti": "",
-      "procedimento": "Tagliare il pollo a bocconcini e le zucchine a rondelle. Scaldare l'olio in padella, aggiungere il pollo e cuocerlo finché diventa dorato. Unire le zucchine, sale, pepe, succo e scorza di limone. Cuocere per 10-12 minuti, mescolando ogni tanto, fino a ottenere un piatto profumato, tenero e leggero."
+      "procedimento": "Lessare il farro perlato e lasciarlo raffreddare. Unire pomodori a cubetti, mais dolce e feta greca light sbriciolata. Condire con olio EVO a crudo."
+    },
+    {
+      "titolo": "Spaghetti integrali alle lenticchie rosse e pomodoro",
+      "categoria": "Pranzo",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Preparare un sugo con passata di pomodoro, carote tritate e lenticchie rosse fatte sobbollire fino a cottura. Mantecare gli spaghetti integrali scolati al dente."
+    },
+    {
+      "titolo": "Frittata soffice di albumi alle erbe",
+      "categoria": "Cena",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Sbattere energicamente gli albumi con un pizzico di sale ed erbe aromatiche. Cuocere in padella antiaderente velata di olio EVO a fuoco medio-basso girandola a metà cottura."
+    },
+    {
+      "titolo": "Penne rustiche con cannellini e melanzane",
+      "categoria": "Pranzo",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Saltare in padella la cipolla con le melanzane a cubetti. Aggiungere i fagioli cannellini lessati e saltare insieme alle penne rigate con un filo di olio EVO."
+    },
+    {
+      "titolo": "Tacchino saltato con peperoni dolci",
+      "categoria": "Pranzo",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Rosolare a listarelle il petto di tacchino e i peperoni in padella. Sfumare con succo di limone fresco e servire abbinato al riso Basmati."
+    },
+    {
+      "titolo": "Straccetti di manzo con fusilli e melanzane",
+      "categoria": "Pranzo",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Cuocere le fettine di bovino tagliate a straccetti con melanzane e passata di pomodoro. Condire i fusilli cotti al dente completando con olio EVO."
+    },
+    {
+      "titolo": "Porridge energetico da ciclismo",
+      "categoria": "Colazione",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Far bollire l'avena con latte scremato e miele per una crema densa. Aggiungere banana a fettine e pura pasta di nocciola."
+    },
+    {
+      "titolo": "Zabaione proteico con yogurt greco",
+      "categoria": "Colazione",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Montare a crema 1 tuorlo d'uovo fresco con miele. Incorporare delicatamente lo yogurt greco 0% per ottenere una soffice mousse proteica e servire con fette biscottate."
+    },
+    {
+      "titolo": "Piadina ripiena leggera con verdure",
+      "categoria": "Cena",
+      "fattibile": true,
+      "ingredienti_mancanti": "",
+      "procedimento": "Scaldare la piadina su una piastra rovente, farcire con uova sode a fette, albume strapazzato, foglie di lattuga fresca e fettine di finocchio croccante condite con olio EVO."
     }
   ],
   "stato_dispensa": {
     "utilizzate": [
-      "Fiocchi d'avena integrale",
-      "Latte scremato UHT",
-      "Miele di eucalipto",
-      "Pura pasta di nocciola tostata 100%",
-      "Corn flakes / Fiocchi di mais",
-      "Fette biscottate integrali",
-      "Confettura biologica 100% frutta",
-      "Panfetta integrale",
-      "Yogurt greco 0% grassi",
-      "Mela",
-      "Tonno rosso fresco a trancio",
-      "Zucchine",
-      "Olio extravergine d'oliva (EVO)",
-      "Fettine bovino adulto \"tuttofare\"",
-      "Patate",
-      "Lattuga",
-      "Uova fresche intere",
-      "Mandorle",
-      "Prosciutto crudo di San Daniele DOP",
-      "Farro Perlato",
-      "Lenticchie rosse secche",
-      "Carote",
-      "Petto di tacchino",
-      "Broccoli",
-      "Muesli con frutta secca ed essiccata",
-      "Semi di chia",
-      "Riso soffiato integrale biologico",
-      "Cachi",
-      "Banana",
-      "Barretta mandorle, arachidi e frutta",
-      "Albume d'uovo pastorizzato",
-      "Peperoni",
-      "Rigatoni",
-      "Fagioli cannellini secchi",
-      "Passata di pomodoro",
-      "Finocchi",
-      "Semi di zucca",
-      "Melanzane",
       "Feta greca DOP light",
-      "Spaghetti integrali bio trafilati al bronzo",
-      "Pomodori",
-      "Nutella",
+      "Semi di zucca",
+      "Semi di chia",
+      "Prosciutto crudo di San Daniele DOP",
+      "Uova fresche intere",
+      "Albume d'uovo pastorizzato",
+      "Farro Perlato",
       "Mais dolce cotto a vapore",
+      "Petto di tacchino",
+      "Fettine bovino adulto \"tuttofare\"",
+      "Tonno rosso fresco a trancio",
+      "Yogurt greco 0% grassi",
+      "Latte scremato UHT",
       "Riso Basmati",
-      "Limone"
-    ],
-    "rimanenti": [
-      "Cipolle rosse",
-      "Piadina",
+      "Spaghetti integrali bio trafilati al bronzo",
       "Penna rigata",
       "Fusillo",
-      "Farfalla"
+      "Farfalla",
+      "Piadina",
+      "Lenticchie rosse secche",
+      "Fagioli cannellini secchi",
+      "Corn flakes / Fiocchi di mais",
+      "Fette biscottate integrali",
+      "Fiocchi d'avena integrale",
+      "Panfetta integrale",
+      "Riso soffiato integrale biologico",
+      "Muesli con frutta secca ed essiccata",
+      "Zucchine",
+      "Patate",
+      "Lattuga",
+      "Broccoli",
+      "Pomodori",
+      "Finocchi",
+      "Carote",
+      "Melanzane",
+      "Peperoni",
+      "Cipolle rosse",
+      "Mele",
+      "Cachi",
+      "Banane",
+      "Limone",
+      "Mandorle",
+      "Miele di eucalipto",
+      "Nutella",
+      "Confettura biologica 100% frutta",
+      "Pura pasta di nocciola tostata 100%",
+      "Passata di pomodoro",
+      "Olio extravergine d'oliva (EVO)"
+    ],
+    "rimanenti": [
+      "Rigatoni"
     ]
   },
   "ingredienti_da_acquistare": {}
