@@ -143,15 +143,22 @@
         }
       },
       "pranzo": {
-        "titolo": "Pasta al sugo di pomodoro con Macinato sceltissimo",
+        "titolo": "Pasta al ragù rustico con Macinato sceltissimo e Piselli",
         "ricetta_id": null,
         "ingredienti": [
           {
             "nome": "Pasta",
-            "giuseppe": "90 g",
-            "marinella": "80 g",
-            "alexandra": "80 g",
-            "totale": "250 g"
+            "giuseppe": "75 g",
+            "marinella": "65 g",
+            "alexandra": "65 g",
+            "totale": "205 g"
+          },
+          {
+            "nome": "Piselli",
+            "giuseppe": "60 g",
+            "marinella": "40 g",
+            "alexandra": "40 g",
+            "totale": "140 g"
           },
           {
             "nome": "Macinato di carne sceltissimo",
@@ -176,9 +183,9 @@
           }
         ],
         "macro": {
-          "alexandra": "514 kcal | 28.6g Pro | 62.1g Carb | 15.2g Fat (3.2g saturi)",
-          "giuseppe": "645 kcal | 44.8g Pro | 69.2g Carb | 18.9g Fat (4.6g saturi)",
-          "marinella": "569 kcal | 37.2g Pro | 62.1g Carb | 17.2g Fat (4.0g saturi)"
+          "alexandra": "490 kcal | 28.9g Pro | 55.6g Carb | 15.3g Fat (3.0g saturi)",
+          "giuseppe": "636 kcal | 46.2g Pro | 64.8g Carb | 19.1g Fat (4.5g saturi)",
+          "marinella": "545 kcal | 37.5g Pro | 55.6g Carb | 17.3g Fat (3.8g saturi)"
         }
       },
       "spuntino_pomeriggio": {
@@ -192,9 +199,16 @@
         }
       },
       "cena": {
-        "titolo": "Frittata di albumi con Melanzane al forno",
+        "titolo": "Minestrone di verdure caldo con Panfetta tostata e Frittata di albumi",
         "ricetta_id": null,
         "ingredienti": [
+          {
+            "nome": "Minestrone",
+            "giuseppe": "250 g",
+            "marinella": "200 g",
+            "alexandra": "200 g",
+            "totale": "650 g"
+          },
           {
             "nome": "Albume",
             "giuseppe": "250 g",
@@ -210,13 +224,6 @@
             "totale": "120 g"
           },
           {
-            "nome": "Melanzane",
-            "giuseppe": "150 g",
-            "marinella": "150 g",
-            "alexandra": "150 g",
-            "totale": "450 g"
-          },
-          {
             "nome": "Olio extravergine d'oliva (EVO)",
             "giuseppe": "10 g",
             "marinella": "10 g",
@@ -225,15 +232,15 @@
           }
         ],
         "macro": {
-          "alexandra": "304 kcal | 21.5g Pro | 27.1g Carb | 11.8g Fat (1.7g saturi)",
-          "giuseppe": "356 kcal | 32.4g Pro | 27.8g Carb | 12.0g Fat (1.7g saturi)",
-          "marinella": "330 kcal | 26.9g Pro | 27.4g Carb | 11.9g Fat (1.7g saturi)"
+          "alexandra": "324 kcal | 23.5g Pro | 27.1g Carb | 11.9g Fat (1.7g saturi)",
+          "giuseppe": "394 kcal | 35.5g Pro | 30.2g Carb | 12.2g Fat (1.7g saturi)",
+          "marinella": "350 kcal | 29.0g Pro | 27.4g Carb | 12.0g Fat (1.7g saturi)"
         }
       },
       "riepilogo": {
-        "alexandra": "1464 kcal | 79.2g Pro | 191.2g Carb | 41.6g Fat (6.4g saturi)",
-        "giuseppe": "1688 kcal | 127.9g Pro | 167.4g Carb | 55.1g Fat (8.7g saturi)",
-        "marinella": "1407 kcal | 99.6g Pro | 148.6g Carb | 44.8g Fat (7.3g saturi)"
+        "alexandra": "1459 kcal | 81.5g Pro | 184.7g Carb | 41.9g Fat (6.3g saturi)",
+        "giuseppe": "1716 kcal | 132.4g Pro | 165.3g Carb | 55.5g Fat (8.6g saturi)",
+        "marinella": "1404 kcal | 102.0g Pro | 142.1g Carb | 44.9g Fat (7.1g saturi)"
       }
     },
     {
@@ -785,15 +792,15 @@
       "Noci",
       "Pistacchi",
       "Anacardi",
-      "Passata di pomodoro"
+      "Passata di pomodoro",
+      "Minestrone",
+      "Piselli"
     ],
     "rimanenti": [
       "Uova intere",
       "Corn flakes / fiocchi di mais",
-      "Pisello",
       "Riso soffiato integrale biologico",
       "Mais dolce",
-      "Minestrone",
       "Friggitelli",
       "Semi di chia",
       "Prugne secche"
