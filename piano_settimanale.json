@@ -266,37 +266,37 @@
         "ingredienti": [
           {
             "nome": "Farro",
-            "giuseppe": "120 g",
-            "marinella": "80 g",
-            "alexandra": "85 g",
-            "totale": "285 g"
+            "giuseppe": "70 g",
+            "marinella": "50 g",
+            "alexandra": "50 g",
+            "totale": "170 g"
           },
           {
             "nome": "Ceci",
-            "giuseppe": "60 g",
-            "marinella": "40 g",
-            "alexandra": "40 g",
-            "totale": "140 g"
+            "giuseppe": "30 g",
+            "marinella": "25 g",
+            "alexandra": "25 g",
+            "totale": "80 g"
           },
           {
             "nome": "Tonno al naturale",
-            "giuseppe": "150 g",
-            "marinella": "100 g",
-            "alexandra": "80 g",
-            "totale": "330 g"
+            "giuseppe": "100 g",
+            "marinella": "80 g",
+            "alexandra": "70 g",
+            "totale": "250 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
-            "giuseppe": "15 g",
+            "giuseppe": "10 g",
             "marinella": "10 g",
             "alexandra": "10 g",
-            "totale": "35 g"
+            "totale": "30 g"
           }
         ],
         "macro": {
-          "alexandra": "607 kcal | 40.1g Pro | 84.7g Carb | 14.7g Fat (2.1g saturi)",
-          "giuseppe": "916 kcal | 66.6g Pro | 121.7g Carb | 21.9g Fat (3.2g saturi)",
-          "marinella": "610 kcal | 44.4g Pro | 81.1g Carb | 14.6g Fat (2.1g saturi)"
+          "alexandra": "422 kcal | 28.6g Pro | 48.8g Carb | 13.1g Fat (2.0g saturi)",
+          "giuseppe": "539 kcal | 39.4g Pro | 65.5g Carb | 14.0g Fat (2.2g saturi)",
+          "marinella": "432 kcal | 30.9g Pro | 48.8g Carb | 13.1g Fat (2.0g saturi)"
         }
       },
       "spuntino_pomeriggio": {
@@ -349,9 +349,9 @@
         }
       },
       "riepilogo": {
-        "alexandra": "1578 kcal | 94.1g Pro | 220.9g Carb | 38.8g Fat (5.1g saturi)",
-        "giuseppe": "2152 kcal | 164.9g Pro | 252.5g Carb | 59.5g Fat (8.4g saturi)",
-        "marinella": "1515 kcal | 125.9g Pro | 190.7g Carb | 32.2g Fat (4.8g saturi)"
+        "alexandra": "1393 kcal | 82.6g Pro | 185.0g Carb | 37.2g Fat (5.0g saturi)",
+        "giuseppe": "1776 kcal | 137.7g Pro | 196.3g Carb | 51.6g Fat (7.5g saturi)",
+        "marinella": "1336 kcal | 112.5g Pro | 158.5g Carb | 30.8g Fat (4.7g saturi)"
       }
     },
     {
@@ -502,37 +502,37 @@
         "ingredienti": [
           {
             "nome": "Cuscus",
-            "giuseppe": "120 g",
-            "marinella": "80 g",
-            "alexandra": "85 g",
-            "totale": "285 g"
+            "giuseppe": "70 g",
+            "marinella": "50 g",
+            "alexandra": "50 g",
+            "totale": "170 g"
           },
           {
             "nome": "Lenticchie rosse secche",
-            "giuseppe": "60 g",
-            "marinella": "40 g",
-            "alexandra": "40 g",
-            "totale": "140 g"
+            "giuseppe": "30 g",
+            "marinella": "25 g",
+            "alexandra": "25 g",
+            "totale": "80 g"
           },
           {
             "nome": "Sgombro al naturale",
-            "giuseppe": "150 g",
-            "marinella": "100 g",
-            "alexandra": "80 g",
-            "totale": "330 g"
+            "giuseppe": "100 g",
+            "marinella": "70 g",
+            "alexandra": "60 g",
+            "totale": "230 g"
           },
           {
             "nome": "Olio extravergine d'oliva (EVO)",
-            "giuseppe": "15 g",
+            "giuseppe": "10 g",
             "marinella": "10 g",
             "alexandra": "10 g",
-            "totale": "35 g"
+            "totale": "30 g"
           }
         ],
         "macro": {
-          "alexandra": "661 kcal | 37.0g Pro | 89.8g Carb | 16.5g Fat (2.8g saturi)",
-          "giuseppe": "1006 kcal | 60.6g Pro | 128.9g Carb | 26.9g Fat (4.7g saturi)",
-          "marinella": "671 kcal | 40.4g Pro | 86.0g Carb | 17.9g Fat (3.1g saturi)"
+          "alexandra": "450 kcal | 24.6g Pro | 50.5g Carb | 15.9g Fat (2.8g saturi)",
+          "giuseppe": "603 kcal | 36.5g Pro | 68.0g Carb | 19.5g Fat (3.7g saturi)",
+          "marinella": "466 kcal | 26.6g Pro | 50.5g Carb | 16.7g Fat (3.0g saturi)"
         }
       },
       "spuntino_pomeriggio": {
@@ -585,9 +585,9 @@
         }
       },
       "riepilogo": {
-        "alexandra": "1606 kcal | 81.0g Pro | 230.7g Carb | 41.2g Fat (5.9g saturi)",
-        "giuseppe": "2212 kcal | 135.8g Pro | 267.2g Carb | 69.3g Fat (9.8g saturi)",
-        "marinella": "1538 kcal | 108.0g Pro | 201.1g Carb | 36.3g Fat (5.5g saturi)"
+        "alexandra": "1395 kcal | 68.6g Pro | 191.3g Carb | 40.5g Fat (6.0g saturi)",
+        "giuseppe": "1808 kcal | 111.7g Pro | 206.3g Carb | 61.9g Fat (8.9g saturi)",
+        "marinella": "1333 kcal | 94.2g Pro | 165.7g Carb | 35.1g Fat (5.4g saturi)"
       }
     },
     {
